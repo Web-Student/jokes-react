@@ -36,7 +36,7 @@ Not new to the class, but things s i still feel shaky on but are not technically
     [] Add a basic test so next deadline we can have automated testing in the pipeline.
 
 Rubric Items completed:  
-[] Technology: Local storage /5  
+[5] Technology: Local storage /5  
 [] Technology: Client-side state   stores (e.g., TanStack Query or Context) /5  
 [] Technology: Toasts / Global notifications or alerts /5    
 [] Technology: Error handling (API requests and render errors) /5  
@@ -64,7 +64,7 @@ Rubric Items completed:
     [] Testing in pipeline
 
 Rubric Items completed:  
-[] Technology: Local storage /5  
+[5] Technology: Local storage /5  
 [] Technology: Client-side state   stores (e.g., TanStack Query or Context) /5  
 [] Technology: Toasts / Global notifications or alerts /5  
 [] Technology: Error handling (API requests and render errors) /5  
@@ -90,7 +90,7 @@ Rubric Items completed:
     [] Add a spinner for loading while fetching data
 
 Rubric Items completed:  
-[] Technology: Local storage /5  
+[5] Technology: Local storage /5  
 [1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
 [] Technology: Toasts / Global notifications or alerts /5  
 [] Technology: Error handling (API requests and render errors) /5  
@@ -116,7 +116,7 @@ Rubric Items completed:
 
 
 Rubric Items completed:  
-[] Technology: Local storage /5  
+[5] Technology: Local storage /5  
 [1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
 [] Technology: Toasts / Global notifications or alerts /5  
 [] Technology: Error handling (API requests and render errors) /5  
@@ -147,7 +147,7 @@ Rubric Items completed:
     [] Author selection page (view all authors on the apge)
 
 Rubric Items completed:  
-[] Technology: Local storage /5  
+[5] Technology: Local storage /5  
 [1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
 [4] Technology: Toasts / Global notifications or alerts /5  
 [] Technology: Error handling (API requests and render errors) /5  
@@ -172,20 +172,106 @@ Rubric Items completed:
 [1] Experience: All experiences mobile-friendly /5  
 [] Experience: 3 instances of reordering elements on smaller screens /5  
 [6] Professional, organized, and smooth experience /20  
+
+
 ### Nov 23
     Goal for features completed:
     [] Submit a request to edit another user’s joke. (perhaps the author had a typo)
     [] Review requests for edit on your joke, and approve or deny them.
     [] Ensure on the requests it is mobile friendly, perhaps has an alternate comparison layout for mobile
 
+[5] Technology: Local storage /5  
+[1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+[4] Technology: Toasts / Global notifications or alerts /5  
+[] Technology: Error handling (API requests and render errors) /5  
+[5] Technology: Network calls for reading and writing data /5 
+[5] Technology: TypeScript for developer assistance /5  
+[4] Technology: 10+ pages or views /5  
+[5] Technology: CI/CD pipeline /5  
+[5] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[5] Technology: Linting in pipeline /5  
+[6] Technology: 3+ generic form input components /9  
+[9] Technology: 4+ generic layout components /12  
+    - (component 1: layout to display a joke)
+    - (component 2: layout for editing a joke, or the home button, etc.)
+[10] Technology: Authentication and user account support /10  
+[10] Technology: Authorized and public pages /5  
+[1] Experience: All experiences mobile-friendly /5  
+[] Experience: 3 instances of reordering elements on smaller screens /5  
+[8] Professional, organized, and smooth experience /20  
+
+
 ### Nov 26
     Goal for features completed:
-    [] 
+    [] Search for a joke page
+    [] stretch goal: simple stats page on how many users we have, how many jokes, etc. 
+    [] Double-check we have appropriate error handling
+    [] as needed: a generic reusable error display component may be helpful 
+
+[5] Technology: Local storage /5  
+[1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+[4] Technology: Toasts / Global notifications or alerts /5  
+[] Technology: Error handling (API requests and render errors) /5  
+[5] Technology: Network calls for reading and writing data /5 
+[5] Technology: TypeScript for developer assistance /5  
+[5] Technology: 10+ pages or views /5  
+[5] Technology: CI/CD pipeline /5  
+[5] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[5] Technology: Linting in pipeline /5  
+[6] Technology: 3+ generic form input components /9  
+[9] Technology: 4+ generic layout components /12  
+    - (component 1: layout to display a joke)
+    - (component 2: layout for editing a joke, or the home button, etc.)
+    - perhaps a generic component for stats?
+    - perhaps one for showing errors
+    
+[10] Technology: Authentication and user account support /10  
+[5] Technology: Authorized and public pages /5  
+[1] Experience: All experiences mobile-friendly /5  
+[] Experience: 3 instances of reordering elements on smaller screens /5  
+[8] Professional, organized, and smooth experience /20  
+
 ### Dec 4
+    Goal for features completed:
+    [] Anything I forgot
+    [] make sure you can view your own jokes
+    [] style, style, style
+    [] cleanup, cleanup, cleanup
+    [] make sure the login page looks pretty
+    [] mobile friendly all the way
 
-    [] Jokes submitted by the aforementioned author.
 
-### notes on testing
+[5] Technology: Local storage /5  
+[5] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+[5] Technology: Toasts / Global notifications or alerts /5  
+[5] Technology: Error handling (API requests and render errors) /5  
+[5] Technology: Network calls for reading and writing data /5 
+[5] Technology: TypeScript for developer assistance /5  
+[5] Technology: 10+ pages or views /5  
+[5] Technology: CI/CD pipeline /5  
+[5] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[5] Technology: Linting in pipeline /5  
+[6] Technology: 3+ generic form input components /9  
+[12] Technology: 4+ generic layout components /12  
+    - (component 1: layout to display a joke)
+    - (component 2: layout for editing a joke, or the home button, etc.)
+    - perhaps a generic component for stats?
+    - perhaps one for showing errors
+    
+[10] Technology: Authentication and user account support /10  
+[5] Technology: Authorized and public pages /5  
+[5] Experience: All experiences mobile-friendly /5  
+[5] Experience: 3 instances of reordering elements on smaller screens /5  
+- ideas on what to re-order:
+- the way stats are displayed
+- the way you review requests to edit your jokes
+[20] Professional, organized, and smooth experience /20 
+
+
+
+
+
+#### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)
 - vitest (made by the people who created vite)
     --tests are identified by .test.js
