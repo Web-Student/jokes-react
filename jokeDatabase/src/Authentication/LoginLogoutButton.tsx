@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
+import { deleteCookie } from "./cookieFunctions";
 
 export const LoginLogoutButton = () => {
     const auth = useAuth();
-    function deleteCookie(cookieName:string)  {
-        document.cookie = `${cookieName}=; expires = Thu, 01 Jan 2000 00:00:00 UTC; path=/;`;
-        console.log("deleted cookie");
-    }
     useEffect(() => {
         console.log(`our new user is ${auth?.user} `);
         if (auth.user) {
