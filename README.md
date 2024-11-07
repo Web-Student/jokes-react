@@ -270,10 +270,12 @@ Rubric Items completed:
 ##### Actual timeline
 ### Nov 6
     Goal for features completed:
-    [] API created with at least one read endpoint, although it may not necessarily read from the database at this point
-    [x] Authentication works
-    [] Authorization works
-    [] Add a basic test so next deadline we can have automated testing in the pipeline.
+    [x] API created with at least one read endpoint, although it may not necessarily read from the database at this point
+    [x] Authentication works (users can log in)
+    [x] Authorization works (whether or not you see certain text is based on the value of your email)
+    [1/2] Add a basic test so next deadline we can have automated testing in the pipeline.  
+        Explanation: The api has a unit testing framework, although it doesn't have anything to test yet.  
+        I have added Jest to my react app, but am still sorting out some errors trying to get the test to run.
 
 Rubric Items completed:  
 [5] Technology: Local storage /5  

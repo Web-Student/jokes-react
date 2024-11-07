@@ -11,7 +11,7 @@ function App() {
         <p>User is authorized, {GetCurrentUserEmail()}</p>
         <LoginLogoutButton/>
       </>
-  )
+    )
   }
   else {
     return (<p> User is not authorized, {GetCurrentUserEmail()}
