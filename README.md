@@ -267,7 +267,32 @@ Rubric Items completed:
 - the way you review requests to edit your jokes
 [20] Professional, organized, and smooth experience /20 
 
+##### Actual timeline
+### Nov 6
+    Goal for features completed:
+    [] API created with at least one read endpoint, although it may not necessarily read from the database at this point
+    [x] Authentication works
+    [] Authorization works
+    [] Add a basic test so next deadline we can have automated testing in the pipeline.
 
+Rubric Items completed:  
+[5] Technology: Local storage /5  
+[] Technology: Client-side state   stores (e.g., TanStack Query or Context) /5  
+[] Technology: Toasts / Global notifications or alerts /5    
+[] Technology: Error handling (API requests and render errors) /5  
+[0.5] Technology: Network calls for reading and writing data /5   
+[5] Technology: TypeScript for developer assistance /5  
+[0.25] Technology: 10+ pages or views /5  
+[] Technology: CI/CD pipeline /5    
+[1] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[] Technology: Linting in pipeline /5  
+[] Technology: 3+ generic form input components /9  
+[] Technology: 4+ generic layout components /12  
+[10] Technology: Authentication and user account support /10  
+[10] Technology: Authorized and public pages /5  
+[] Experience: All experiences mobile-friendly /5  
+[] Experience: 3 instances of reordering elements on smaller screens /5  
+[] Professional, organized, and smooth experience /20  
 
 
 
