@@ -297,6 +297,34 @@ Rubric Items completed:
 [] Professional, organized, and smooth experience /20  
 
 
+### Actual: Nov 9
+    Goal for features completed:
+    [x] Database deployed & running on kubernetes  (as far as I know, the logs look happy but I'm not fetching real data yet.)
+    [x] Api deployed and running on kubernetes  
+    [] Client (Web App) deployed and running on kubernetes
+    [] Authentication/Authorization still works on kubernetes
+    [] Linting in pipeline
+    [] Testing in pipeline
+(I plan to implement more Monday to catch up to this)
+
+Rubric Items completed:  
+[5] Technology: Local storage /5  
+[] Technology: Client-side state   stores (e.g., TanStack Query or Context) /5  
+[] Technology: Toasts / Global notifications or alerts /5  
+[] Technology: Error handling (API requests and render errors) /5  
+[0] Technology: Network calls for reading and writing data /5 
+[5] Technology: TypeScript for developer assistance /5  
+[0.25] Technology: 10+ pages or views /5  
+[3] Technology: CI/CD pipeline /5  
+[0] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[0] Technology: Linting in pipeline /5  
+[] Technology: 3+ generic form input components /9  
+[] Technology: 4+ generic layout components /12  
+[6] Technology: Authentication and user account support /10  
+[0] Technology: Authorized and public pages /5  
+[] Experience: All experiences mobile-friendly /5  
+[] Experience: 3 instances of reordering elements on smaller screens /5  
+[] Professional, organized, and smooth experience /20   
 
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)

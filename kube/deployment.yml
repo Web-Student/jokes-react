@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: joke-client
-  namespace: rachel
+  namespace: rjoke
 spec:
   replicas: 1
   selector:
