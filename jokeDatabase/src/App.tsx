@@ -45,23 +45,12 @@ function HomePageContent() {
         <p>User is authorized, {GetCurrentUserEmail()}</p>
         <Link to="/jokes">Click here to view all jokes</Link>
         {/* <LoginLogoutButton/> */}
-        {/* {Array.isArray(jokes) && jokes.length > 0 ? (
-          jokes.map((joke, index) => (
-            <div key={index}>
-              <p>{joke.question}</p>
-              <p>{joke.answer}</p>
-            </div>
-          ))
-        ) : (
-          <p>No jokes available</p>
-        )} */}
-        {/* {jokes.map((joke) => (
-          <div>
-              {joke.question}
-              {joke.answer}
+        {jokes.map((joke, id:number) => (
+          <div key={id}>
+              <h3>{joke.question}</h3>
+              <h4>{joke.answer}</h4>
           </div>
-        ))} */}
-        
+        ))}        
       </>
     )
 }
