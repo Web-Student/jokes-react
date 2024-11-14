@@ -1,27 +1,69 @@
+import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
+import useGetAllJokes from './CustomHooks/useGetAllJokes'
+import { AllJokes } from './Pages/AllJokes'
 
 function App() {
-  const authorized = IsAuthorized("r@mail.edu")
+  return (
+      <Routes>
+        <Route path="/jokes" element={<AllJokes/>} />
+        <Route path="/" element={<HomePageContent/>} />
+      </Routes>
+  )
+}
 
-  if (authorized) {
+function HomePageContent() {
+    //const authorized = IsAuthorized("r@mail.edu")
+    const { data: jokes = [], isLoading, isError } = useGetAllJokes();
+    console.log("Joke 1 is ", jokes[0]);
+    // if (!authorized) {
+    //   return (
+    //     <>
+    //     <p> User is not authorized, {GetCurrentUserEmail()}</p>
+    //     <LoginLogoutButton/>
+    //     </>
+    //   )
+    // }
+    if (isLoading) {
+      console.log("Data is loading")
+      return (<p>loading</p>)
+    } 
+    if (isError){
+      return (<p>Error, please put a custom error component here</p>)
+    }
+    else {
+      console.log("Type of jokes:", Array.isArray(jokes));  // Should be true if jokes is an array  
+    }
+    
     return (
       <>
+      {/* <Routes>
+      <Route path="/jokes" element={<AllJokes/>} />
+    </Routes> */}
         <p>User is authorized, {GetCurrentUserEmail()}</p>
-        <LoginLogoutButton/>
+        <Link to="/jokes">Click here to view all jokes</Link>
+        {/* <LoginLogoutButton/> */}
+        {/* {Array.isArray(jokes) && jokes.length > 0 ? (
+          jokes.map((joke, index) => (
+            <div key={index}>
+              <p>{joke.question}</p>
+              <p>{joke.answer}</p>
+            </div>
+          ))
+        ) : (
+          <p>No jokes available</p>
+        )} */}
+        {/* {jokes.map((joke) => (
+          <div>
+              {joke.question}
+              {joke.answer}
+          </div>
+        ))} */}
+        
       </>
     )
-  }
-  else {
-    return (<p> User is not authorized, {GetCurrentUserEmail()}
-    <LoginLogoutButton/></p>)
-  }
-  return (
-    <>
-      <LoginLogoutButton/>
-    </>
-  )
 }
 
 export default App
