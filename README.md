@@ -326,6 +326,33 @@ Rubric Items completed:
 [] Experience: 3 instances of reordering elements on smaller screens /5  
 [] Professional, organized, and smooth experience /20   
 
+
+# Actual: Nov 13
+Goal for features completed:
+    [x] View All Jokes (1/2 credit, it doesn't read from db)
+    [] Joke Generator (retrieves a random joke or something of that sort)
+    [x] Add a spinner for loading while fetching data
+
+Rubric Items completed:  
+[] Technology: Local storage /5  
+[3] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+[] Technology: Toasts / Global notifications or alerts /5  
+[] Technology: Error handling (API requests and render errors) /5  
+[1] Technology: Network calls for reading and writing data /5 
+[5] Technology: TypeScript for developer assistance /5  
+[1] Technology: 10+ pages or views /5  
+[3] Technology: CI/CD pipeline /5  
+[] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[] Technology: Linting in pipeline /5  
+[] Technology: 3+ generic form input components /9  
+[] Technology: 4+ generic layout components /12  
+    - (component 1: layout to display a joke)
+[0] Technology: Authentication and user account support /10   [Was implemented, now 0]
+[0] Technology: Authorized and public pages /5  [Was impplemented, now 0 ]
+[1] Experience: All experiences mobile-friendly /5  
+[] Experience: 3 instances of reordering elements on smaller screens /5  
+[] Professional, organized, and smooth experience /20  
+
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)
 - vitest (made by the people who created vite)
