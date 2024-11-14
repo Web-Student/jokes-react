@@ -4,6 +4,8 @@ import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
 import useGetAllJokes from './CustomHooks/useGetAllJokes'
 import { AllJokes } from './Pages/AllJokes'
+import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
 
 function App() {
   return (
@@ -28,7 +30,11 @@ function HomePageContent() {
     // }
     if (isLoading) {
       console.log("Data is loading")
-      return (<p>loading</p>)
+      return (
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      )
     } 
     if (isError){
       return (<p>Error, please put a custom error component here</p>)
