@@ -4,7 +4,6 @@ import './index.css'
 import App from './App.tsx'
 import { AuthProvider } from 'react-oidc-context';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Router, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
 const oidcConfig = {
