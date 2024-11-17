@@ -4,11 +4,20 @@ import { Joke } from "../DataTransfer/Joke"
 interface Props {
     joke: Joke;
 }
-export const JokeDisplay: React.FC<Props> = ({joke}) => {
+
+const defaultJoke:Joke = {
+    id:1,
+    question: "default question",
+    answer: "default answer"
+}
+
+export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
     return (
-        <div>
-            <h3>{joke.question}</h3>
-            <p>{joke.answer}</p>
+        <div className = "card">
+            <div className="card-body">
+                <p className="card-title">{joke.question}</p>
+                <p className="card-text">{joke.answer}</p>
+            </div>
         </div>
     )
 }

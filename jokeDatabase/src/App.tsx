@@ -6,6 +6,9 @@ import useGetAllJokes from './CustomHooks/useGetAllJokes'
 import { AllJokes } from './Pages/AllJokes'
 import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
+import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
+import { JokeDisplay } from './DisplayComponents/JokeDisplay'
+import { Joke } from './DataTransfer/Joke'
 
 function App() {
   return (
@@ -18,8 +21,13 @@ function App() {
 
 function HomePageContent() {
     //const authorized = IsAuthorized("r@mail.edu")
-    const { data: jokes = [], isLoading, isError } = useGetAllJokes();
-    console.log("Joke 1 is ", jokes[0]);
+    const { data: joke, isLoading, isError } = useGetRandomJoke();
+    const defaultJoke = {
+      id: 1,
+      question: "text",
+      answer: "answer",
+    };
+    console.log("Joke 1 is ", joke);
     // if (!authorized) {
     //   return (
     //     <>
@@ -39,24 +47,13 @@ function HomePageContent() {
     if (isError){
       return (<p>Error, please put a custom error component here</p>)
     }
-    else {
-      console.log("Type of jokes:", Array.isArray(jokes));  // Should be true if jokes is an array  
-    }
     
     return (
       <>
-      {/* <Routes>
-      <Route path="/jokes" element={<AllJokes/>} />
-    </Routes> */}
         <p>User is authorized, {GetCurrentUserEmail()}</p>
         <Link to="/jokes">Click here to view all jokes</Link>
         {/* <LoginLogoutButton/> */}
-        {jokes.map((joke, id:number) => (
-          <div key={id}>
-              <h3>{joke.question}</h3>
-              <h4>{joke.answer}</h4>
-          </div>
-        ))}        
+        {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
       </>
     )
 }

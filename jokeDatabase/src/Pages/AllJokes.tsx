@@ -2,6 +2,7 @@ import React from "react"
 import useGetAllJokes from "../CustomHooks/useGetAllJokes";
 import { Link } from "react-router-dom";
 import { Joke } from "../DataTransfer/Joke";
+import { JokeDisplay } from "../DisplayComponents/JokeDisplay";
 
 export const AllJokes: React.FC = () => {
     const { data: jokes = [], isLoading, isError } = useGetAllJokes();
@@ -32,11 +33,11 @@ export const AllJokes: React.FC = () => {
         <Link to="/">Home</Link>
         {/* <LoginLogoutButton/> */}
         {jokes.map((jokeObject:Joke, id:number) => (
-          //<JokeDisplay key = {id} joke = {jokeObject}></JokeDisplay>
-          <div key={id}>
-              <h3>{jokeObject.question}</h3>
-              <h4>{jokeObject.answer}</h4>
-          </div>
+          <JokeDisplay key = {id} joke = {jokeObject}></JokeDisplay>
+          // <div key={id}>
+          //     <h3>{jokeObject.question}</h3>
+          //     <h4>{jokeObject.answer}</h4>
+          // </div>
         ))}        
       </>
     )
