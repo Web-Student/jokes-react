@@ -9,12 +9,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaS
 import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
 import { JokeDisplay } from './DisplayComponents/JokeDisplay'
 import { Joke } from './DataTransfer/Joke'
+import { AddJoke } from './Pages/Add'
 
 function App() {
   return (
       <Routes>
         <Route path="/jokes" element={<AllJokes/>} />
         <Route path="/" element={<HomePageContent/>} />
+        <Route path="/add" element={<AddJoke/>} />
       </Routes>
   )
 }
@@ -51,7 +53,10 @@ function HomePageContent() {
     return (
       <>
         <p>User is authorized, {GetCurrentUserEmail()}</p>
+        <br></br>
         <Link to="/jokes">Click here to view all jokes</Link>
+        <br></br>
+        <Link to="/add">Add a joke</Link>
         {/* <LoginLogoutButton/> */}
         {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
       </>

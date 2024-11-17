@@ -7,7 +7,7 @@ export default function useGetAllJokes(): UseQueryResult<Joke[], unknown> {
     const getQuery = useQuery({
         queryKey: ['allJokes'],
         queryFn: async(): Promise<Joke[]>  => {
-            //put our funciton in here
+            //put our function in here
             //I'm following along with https://antematter.io/blogs/simplify-api-data-fetching-with-tanstack-queries 
             const data = await fetch(baseURL + 'jokes');
             //console.log("data in usehook is ", data.json());
