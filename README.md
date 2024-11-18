@@ -353,6 +353,38 @@ Rubric Items completed:
 [] Experience: 3 instances of reordering elements on smaller screens /5  
 [] Professional, organized, and smooth experience /20  
 
+### actual Nov 16
+    Goal for features completed:
+    [1/2, the api=done, half of front end] Add a joke page (this will include a custom input form for the rubric)
+    [] Edit/delete one of the current users existing jokes page
+
+
+Rubric Items completed:  
+[] Technology: Local storage /5  
+[2] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+[] Technology: Toasts / Global notifications or alerts /5  
+[] Technology: Error handling (API requests and render errors) /5  
+[2] Technology: Network calls for reading and writing data /5 
+[5] Technology: TypeScript for developer assistance /5  
+[2.5] Technology: 10+ pages or views /5  
+- View all jokes
+- Joke Generator
+- add new joke
+- edit joke
+
+[3] Technology: CI/CD pipeline /5  
+[] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+[] Technology: Linting in pipeline /5  
+[1] Technology: 3+ generic form input components /9  
+[] Technology: 4+ generic layout components /12  
+    - (component 1: layout to display a joke)
+[is now broken] Technology: Authentication and user account support /10  
+[] Technology: Authorized and public pages /5  
+[1] Experience: All experiences mobile-friendly /5  
+[] Experience: 3 instances of reordering elements on smaller screens /5  
+[2] Professional, organized, and smooth experience /20  
+
+
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)
 - vitest (made by the people who created vite)
