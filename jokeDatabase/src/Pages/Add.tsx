@@ -37,7 +37,9 @@ export const AddJoke:React.FC = () => {
                 
                 <div className="row">
                     <label htmlFor = "answer">Answer</label>
-                    <input type="text" id = "answer" value={newJoke.answer}/>
+                    <input type="text" id = "answer" value={newJoke.answer}
+                    onChange={(e) => setNewJoke((oldJoke) => ({... oldJoke, answer: e.target.value}))}
+                    />
                 </div>
 
                 <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
