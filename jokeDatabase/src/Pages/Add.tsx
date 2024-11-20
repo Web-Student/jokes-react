@@ -6,10 +6,22 @@ import { useAddJoke } from "../CustomHooks/useAddJoke"
 
 export const AddJoke:React.FC = () => {
     const [newJoke, setNewJoke] = useState<Joke>({
-        id: 0,
+        // id: undefined,
         question: "",
         answer: ""
     })
+    const postHook = useAddJoke();
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+
+        postHook.mutate(newJoke)
+
+        setNewJoke({
+            id: 0,
+            question: "",
+            answer: ""
+        })
+    }
     return (
         <>
             <div>
@@ -18,17 +30,17 @@ export const AddJoke:React.FC = () => {
             <form className="container">
                 <div className="row">
                     <label htmlFor = "question">Question</label>
-                    <input type="text" id = "question" 
+                    <input type="text" id = "question" value={newJoke.question}
                     onChange={(e) => setNewJoke((oldJoke) => ({...oldJoke, question: e.target.value}))}
                     ></input>
                 </div>
                 
                 <div className="row">
                     <label htmlFor = "answer">Answer</label>
-                    <input type="text" id = "answer"/>
+                    <input type="text" id = "answer" value={newJoke.answer}/>
                 </div>
 
-                <button className="btn btn-primary" onClick={useAddJoke}>Submit</button>
+                <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
             </form>
         </>
     )
