@@ -5,9 +5,10 @@ import { Joke } from "../DataTransfer/Joke";
 import { JokeDisplay } from "../DisplayComponents/JokeDisplay";
 
 export const AllJokes: React.FC = () => {
-    const { data: jokes = [], isLoading, isError } = useGetAllJokes();
-    
-    if (isLoading) {
+    const {getQuery, invalidate } = useGetAllJokes();
+    const jokes = getQuery.data || []
+
+    if (getQuery.isLoading) {
       console.log("Data is loading")
       return (
         <div className="spinner-border" role="status">
@@ -15,7 +16,7 @@ export const AllJokes: React.FC = () => {
         </div>
       )
     } 
-    if (isError){
+    if (getQuery.isError){
       return (<p>Error, please put a custom error component here</p>)
     }
     else {

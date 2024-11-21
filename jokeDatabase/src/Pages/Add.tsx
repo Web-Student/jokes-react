@@ -37,7 +37,6 @@ export const AddJoke:React.FC = () => {
                     ></input>
                 </div>
 
-                
                 <div className="row">
                     <label htmlFor = "answer">Answer</label>
                     <input type="text" id = "answer" value={newJoke.answer}

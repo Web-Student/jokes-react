@@ -1,8 +1,11 @@
-import { useQuery, UseQueryResult } from "@tanstack/react-query"
+import { useQuery, useQueryClient, UseQueryResult } from "@tanstack/react-query"
 import { Joke } from "../DataTransfer/Joke";
 
-export default function useGetAllJokes(): UseQueryResult<Joke[], unknown> {
+export default function useGetAllJokes(): 
+{getQuery: UseQueryResult<Joke[], unknown>, invalidate: () => void;}
+{
     const baseURL = "http://localhost:5096/" //TODO: set in environment variables
+    const queryClient = useQueryClient(); // Access the QueryClient
     console.log("Called get all jokes");
     const getQuery = useQuery({
         queryKey: ['allJokes'],
@@ -16,9 +19,10 @@ export default function useGetAllJokes(): UseQueryResult<Joke[], unknown> {
             return d;
         },
         staleTime: 10000, //10 minutes and it refreshes,
-        // function invalidate() {
-        //     invalidateQueries({ queryKey: ['allJokes'] })
-        // }
     });
-    return  getQuery //, invalidate
+
+    const invalidate = () => {
+        queryClient.invalidateQueries({queryKey: ['allJokes']})
+    };
+    return  {getQuery, invalidate} //, invalidate
 }
