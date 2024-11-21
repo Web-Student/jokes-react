@@ -388,36 +388,35 @@ Rubric Items completed:
 ### NOv 20 actual
 ### Nov 20
     Goal for features completed:
-    -[] Add good user feedback for when an item is submitted, etc, etc
+    -[x] Add good user feedback for when an item is submitted, etc, etc
         - i have toast upon adding a joke
-
+        - I have a toast upon deleting a joke
+        - When a joke is deleted from the list of jokes, the query is immediately invalidated and the list of jokes is re-fetched.
+        
     -[] improve styling on the pages created so far, make the buttons look good, etc.
     -[] Author selection page (view all authors on the apge)
 
 Rubric Items completed:  
-- [5] Technology: Local storage /5  
-- [1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
-- [4] Technology: Toasts / Global notifications or alerts /5  
+- [] Technology: Local storage /5  
+- [5] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+- [5] Technology: Toasts / Global notifications or alerts /5  
 - [] Technology: Error handling (API requests and render errors) /5  
-- [2] Technology: Network calls for reading and writing data /5 
+- [5] Technology: Network calls for reading and writing data /5 
 - [5] Technology: TypeScript for developer assistance /5  
 - [2.5] Technology: 10+ pages or views /5  
     - View all jokes
     - Joke Generator
     - add new joke
-    - edit joke
-    - see all authors of jokes
 
-- [5] Technology: CI/CD pipeline /5  
-- [5] Technology: Tests run in pipeline, pipeline aborts on failure /5  
-- [5] Technology: Linting in pipeline /5  
-- [3] Technology: 3+ generic form input components /9  
-- [6] Technology: 4+ generic layout components /12  
-    - (component 1: layout to display a joke)
-    - (component 2: layout for editing a joke, or the home button, etc.)
-- [10] Technology: Authentication and user account support /10  
-- [10] Technology: Authorized and public pages /5  
-- [1] Experience: All experiences mobile-friendly /5  
+- [3] Technology: CI/CD pipeline /5  
+- [] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+- [] Technology: Linting in pipeline /5  
+- [] Technology: 3+ generic form input components /9  
+- [3] Technology: 4+ generic layout components /12  
+    - component 1: layout to display a joke
+- [] Technology: Authentication and user account support /10  
+- [] Technology: Authorized and public pages /5  
+- [3] Experience: All experiences mobile-friendly /5   (right now they are,but need to check for future)
 - [] Experience: 3 instances of reordering elements on smaller screens /5  
 - [6] Professional, organized, and smooth experience /20  
 

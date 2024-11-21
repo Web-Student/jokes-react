@@ -20,7 +20,7 @@ function App() {
 }
 
 function HomePageContent() {
-    //const authorized = IsAuthorized("r@mail.edu")
+    const authorized = IsAuthorized("rachel.allen1@students.snow.edu")
     const { data: joke, isLoading, isError } = useGetRandomJoke();
     const defaultJoke = {
       id: 1,
@@ -28,14 +28,14 @@ function HomePageContent() {
       answer: "answer",
     };
     console.log("Joke 1 is ", joke);
-    // if (!authorized) {
-    //   return (
-    //     <>
-    //     <p> User is not authorized, {GetCurrentUserEmail()}</p>
-    //     <LoginLogoutButton/>
-    //     </>
-    //   )
-    // }
+    if (!authorized) {
+      return (
+        <>
+        <p> User is not authorized, {GetCurrentUserEmail()}</p>
+        <LoginLogoutButton/>
+        </>
+      )
+    }
     if (isLoading) {
       console.log("Data is loading")
       return (
@@ -50,12 +50,13 @@ function HomePageContent() {
     
     return (
       <>
+        {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
         <p>User is authorized, {GetCurrentUserEmail()}</p>
         <br></br>
         <Link to="/jokes">Click here to view all jokes</Link>
         <br></br>
         <Link to="/add">Add a joke</Link>
-        {/* <LoginLogoutButton/> */}
+        <LoginLogoutButton/>
         {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
       </>
     )
