@@ -11,7 +11,6 @@ export function useDeleteJoke() {
                 const response = await fetch(baseURL + `delete/${id}`, {
                     method: 'DELETE'
                 });
-                
                 if (!response.ok) {
                     throw new Error(`Failed to delete joke with id ${id}`); //do i really wan tto do that though?
                 }

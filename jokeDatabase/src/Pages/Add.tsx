@@ -44,8 +44,10 @@ export const AddJoke:React.FC = () => {
                     onChange={(e) => setNewJoke((oldJoke) => ({... oldJoke, answer: e.target.value}))}
                     />
                 </div>
-                <Toaster richColors position="bottom-center"/>
+                <Toaster richColors position="bottom-center" invert/>
                 <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+
+                <Link to="/jokes">Back to all jokes</Link>
             </form>
         </>
     )

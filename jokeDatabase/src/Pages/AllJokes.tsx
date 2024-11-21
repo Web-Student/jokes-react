@@ -3,7 +3,6 @@ import useGetAllJokes from "../CustomHooks/useGetAllJokes";
 import { Link } from "react-router-dom";
 import { Joke } from "../DataTransfer/Joke";
 import { JokeDisplay } from "../DisplayComponents/JokeDisplay";
-import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
 
 export const AllJokes: React.FC = () => {
     const { data: jokes = [], isLoading, isError } = useGetAllJokes();

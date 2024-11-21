@@ -15,7 +15,10 @@ export default function useGetAllJokes(): UseQueryResult<Joke[], unknown> {
             console.log("data: ", d);
             return d;
         },
-        staleTime: 10000 //10 minutes and it refreshes
+        staleTime: 10000, //10 minutes and it refreshes,
+        // function invalidate() {
+        //     invalidateQueries({ queryKey: ['allJokes'] })
+        // }
     });
-    return  getQuery
+    return  getQuery //, invalidate
 }
