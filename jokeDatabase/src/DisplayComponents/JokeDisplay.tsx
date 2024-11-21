@@ -1,6 +1,7 @@
 import React from "react"
 import { Joke } from "../DataTransfer/Joke"
 import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
+import { TrashCanIcon } from "../svg/TrashCanIcon";
 
 interface Props {
     joke: Joke;
@@ -20,7 +21,9 @@ export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
             <div className="card-body">
                 <button onClick = {() => {
                     deleteMutation.mutate(joke.id ?? 0)} //TODO: fix this so perhaps id isn't undefined anymore, or delete allows undefined id and has 
-                    }>Delete</button>
+                    }>
+                    <TrashCanIcon />
+                </button>
                 <p className="card-title">{joke.question}</p>
                 <p className="card-text">{joke.answer}</p>
             </div>
