@@ -12,7 +12,7 @@ export const AllJokes: React.FC = () => {
     const {getQuery, invalidate } = useGetAllJokes();
     const jokes = getQuery.data || []
     const deleteMutation = useDeleteJoke();
-    
+
     const handleDelete = (deleteMutation:UseMutationResult<unknown, Error, number>, id?: number,) => {
       if (id === undefined) {
           toast.error("Error deleting joke: joke does not exist")
@@ -21,10 +21,9 @@ export const AllJokes: React.FC = () => {
       deleteMutation.mutate(id ?? 0, {
           onSuccess: () => {
               toast.success("Joke deleted")
+              invalidate();
           }
       }) 
-
-      invalidate();
     }
 
     if (getQuery.isLoading) {
