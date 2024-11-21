@@ -142,9 +142,9 @@ Rubric Items completed:
 
 ### Nov 20
     Goal for features completed:
-    [] Add good user feedback for when an item is submitted, etc, etc
-    [] improve styling on the pages created so far, make the buttons look good, etc.
-    [] Author selection page (view all authors on the apge)
+    -[] Add good user feedback for when an item is submitted, etc, etc
+    -[] improve styling on the pages created so far, make the buttons look good, etc.
+    -[] Author selection page (view all authors on the apge)
 
 Rubric Items completed:  
 [5] Technology: Local storage /5  
