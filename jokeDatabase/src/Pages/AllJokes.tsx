@@ -3,10 +3,29 @@ import useGetAllJokes from "../CustomHooks/useGetAllJokes";
 import { Link } from "react-router-dom";
 import { Joke } from "../DataTransfer/Joke";
 import { JokeDisplay } from "../DisplayComponents/JokeDisplay";
+import { TrashCanIcon } from "../svg/TrashCanIcon";
+import { toast, Toaster } from "sonner";
+import { UseMutationResult } from "@tanstack/react-query";
+import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
 
 export const AllJokes: React.FC = () => {
     const {getQuery, invalidate } = useGetAllJokes();
     const jokes = getQuery.data || []
+    const deleteMutation = useDeleteJoke();
+    
+    const handleDelete = (deleteMutation:UseMutationResult<unknown, Error, number>, id?: number,) => {
+      if (id === undefined) {
+          toast.error("Error deleting joke: joke does not exist")
+      }
+      
+      deleteMutation.mutate(id ?? 0, {
+          onSuccess: () => {
+              toast.success("Joke deleted")
+          }
+      }) 
+
+      invalidate();
+    }
 
     if (getQuery.isLoading) {
       console.log("Data is loading")
@@ -34,12 +53,15 @@ export const AllJokes: React.FC = () => {
         <Link to="/">Home</Link>
         {/* <LoginLogoutButton/> */}
         {jokes.map((jokeObject:Joke, id:number) => (
-          <JokeDisplay key = {id} joke = {jokeObject}></JokeDisplay>
-          // <div key={id}>
-          //     <h3>{jokeObject.question}</h3>
-          //     <h4>{jokeObject.answer}</h4>
-          // </div>
-        ))}        
+          <div>
+            <button onClick = {() => { handleDelete(deleteMutation, jokeObject.id)}}>
+                    <TrashCanIcon />
+            </button>
+            <JokeDisplay key = {id} joke = {jokeObject}></JokeDisplay>
+          </div>
+        ))}
+        
+        <Toaster richColors position="bottom-center" />        
       </>
     )
 }

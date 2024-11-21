@@ -2,13 +2,11 @@ import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
-import useGetAllJokes from './CustomHooks/useGetAllJokes'
 import { AllJokes } from './Pages/AllJokes'
 import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
 import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
 import { JokeDisplay } from './DisplayComponents/JokeDisplay'
-import { Joke } from './DataTransfer/Joke'
 import { AddJoke } from './Pages/Add'
 
 function App() {
