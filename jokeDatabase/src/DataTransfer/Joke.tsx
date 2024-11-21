@@ -1,5 +1,6 @@
 export interface Joke {
     id?: number | undefined,
     question: string,
-    answer: string
+    answer: string,
+    author: string
 }

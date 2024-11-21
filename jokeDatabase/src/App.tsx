@@ -26,6 +26,7 @@ function HomePageContent() {
       id: 1,
       question: "text",
       answer: "answer",
+      author: "example@mail.net"
     };
     console.log("Joke 1 is ", joke);
     if (!authorized) {

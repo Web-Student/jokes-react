@@ -12,7 +12,8 @@ interface Props {
 const defaultJoke:Joke = {
     id:1,
     question: "default question",
-    answer: "default answer"
+    answer: "default answer",
+    author: ""
 }
 
 // const handleDelete = (deleteMutation:UseMutationResult<unknown, Error, number>, id?: number,) => {
@@ -36,6 +37,7 @@ export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
                 </button> */}
                 <p className="card-title">{joke.question}</p>
                 <p className="card-text">{joke.answer}</p>
+                <p>by {joke.author}</p>
             </div>
             {/* <Toaster richColors position="bottom-center" /> */}
         </div>

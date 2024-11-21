@@ -4,12 +4,15 @@ import { Joke } from "../DataTransfer/Joke"
 import { useState } from "react"
 import { useAddJoke } from "../CustomHooks/useAddJoke"
 import { Toaster, toast } from 'sonner'
+import { GetCurrentUserEmail } from "../Authentication/authServices"
 
 export const AddJoke:React.FC = () => {
+    const userEmail = GetCurrentUserEmail()
     const [newJoke, setNewJoke] = useState<Joke>({
         // id: undefined,
         question: "",
-        answer: ""
+        answer: "",
+        author: userEmail ?? ""
     })
     const postHook = useAddJoke();
     const handleSubmit = (e: React.FormEvent) => {
@@ -21,9 +24,11 @@ export const AddJoke:React.FC = () => {
         setNewJoke({
             id: 0,
             question: "",
-            answer: ""
+            answer: "",
+            author: userEmail ?? ""
         })
     }
+    
     return (
         <>
             <div>
@@ -44,6 +49,7 @@ export const AddJoke:React.FC = () => {
                     />
                 </div>
                 <Toaster richColors position="bottom-center" invert/>
+                <p>Current user adding the joke is: {userEmail}</p>
                 <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
 
                 <Link to="/jokes">Back to all jokes</Link>
