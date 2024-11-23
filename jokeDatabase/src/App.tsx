@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes, useParams } from 'react-router-dom'
 import './App.css'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
@@ -9,6 +9,13 @@ import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
 import { JokeDisplay } from './ReusableLayoutComponents/JokeDisplay'
 import { AddJoke } from './Pages/Add'
 import { AllAuthors } from './Pages/Authors'
+import { JokesByAuthor } from './Pages/JokesByAuthor'
+
+//Needed so we can pass a parameter
+const JokesByAuthorWrapper: React.FC = () => {
+  const {author} = useParams<{author:string}> ();
+  return <JokesByAuthor author={author!} />;
+}
 
 function App() {
   return (
@@ -17,6 +24,7 @@ function App() {
         <Route path="/add" element={<AddJoke/>} />
         <Route path="/authors" element={<AllAuthors/>} />
         <Route path="/jokes" element={<AllJokes/>} />
+        <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
       </Routes>
   )
 }

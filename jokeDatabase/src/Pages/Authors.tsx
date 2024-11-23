@@ -39,9 +39,6 @@ export const AllAuthors: React.FC = () => {
         {/* <LoginLogoutButton/> */}
         {authors.map((authorCount, index: number) => (
           <div>
-            <button>
-                    All jokes
-            </button>
             <AuthorDisplay key = {index} person = {authorCount}></AuthorDisplay>
           </div>
         ))}

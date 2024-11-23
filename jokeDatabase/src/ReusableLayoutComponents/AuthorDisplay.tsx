@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AuthorCount } from "../DataTransfer/AuthorCount";
 
 interface Props {
@@ -14,6 +15,9 @@ export const AuthorDisplay: React.FC<Props> = ({person}) => {
                 {/* <button onClick = {() => { handleDelete(deleteMutation, joke.id)}}>
                     <TrashCanIcon />
                 </button> */}
+                <Link to = {`/jokesbyauthor/${person.author}`} className="btn btn-outline">
+                    All jokes
+                </Link>
                 <p className="card-title">{person.author == "" ? "Anonymous": person.author}</p>
                 <p className="card-text">author of {person.count} jokes</p>
                 {/*idea: They could click a star to mark an author as their favorite, and have a "favorite authors" page */}
