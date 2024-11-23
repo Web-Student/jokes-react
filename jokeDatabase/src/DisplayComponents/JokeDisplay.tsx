@@ -37,7 +37,7 @@ export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
                 </button> */}
                 <p className="card-title">{joke.question}</p>
                 <p className="card-text">{joke.answer}</p>
-                <p>by {joke.author}</p>
+                <p className="text-end">by {joke.author}</p>
             </div>
             {/* <Toaster richColors position="bottom-center" /> */}
         </div>

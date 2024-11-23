@@ -176,9 +176,9 @@ Rubric Items completed:
 
 ### Nov 23
     Goal for features completed:
-    [] Submit a request to edit another user’s joke. (perhaps the author had a typo)
-    [] Review requests for edit on your joke, and approve or deny them.
-    [] Ensure on the requests it is mobile friendly, perhaps has an alternate comparison layout for mobile
+    - [] Submit a request to edit another user’s joke. (perhaps the author had a typo)
+    - [] Review requests for edit on your joke, and approve or deny them.
+    - [] Ensure on the requests it is mobile friendly, perhaps has an alternate comparison layout for mobile
 
 [5] Technology: Local storage /5  
 [1] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
@@ -419,6 +419,14 @@ Rubric Items completed:
 - [3] Experience: All experiences mobile-friendly /5   (right now they are,but need to check for future)
 - [] Experience: 3 instances of reordering elements on smaller screens /5  
 - [6] Professional, organized, and smooth experience /20  
+
+### Nov 23 Actual
+### Nov 23
+    Goal for features completed:
+    - [] Submit a request to edit another user’s joke. (perhaps the author had a typo)
+    - [] Review requests for edit on your joke, and approve or deny them.
+    - [] Ensure on the requests it is mobile friendly, perhaps has an alternate comparison layout for mobile
+
 
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)

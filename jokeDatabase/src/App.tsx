@@ -8,13 +8,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaS
 import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
 import { JokeDisplay } from './DisplayComponents/JokeDisplay'
 import { AddJoke } from './Pages/Add'
+import { AllAuthors } from './Pages/Authors'
 
 function App() {
   return (
       <Routes>
-        <Route path="/jokes" element={<AllJokes/>} />
         <Route path="/" element={<HomePageContent/>} />
         <Route path="/add" element={<AddJoke/>} />
+        <Route path="/authors" element={<AllAuthors/>} />
+        <Route path="/jokes" element={<AllJokes/>} />
       </Routes>
   )
 }
@@ -53,10 +55,17 @@ function HomePageContent() {
       <>
         {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
         <p>User is authorized, {GetCurrentUserEmail()}</p>
-        <br></br>
-        <Link to="/jokes">Click here to view all jokes</Link>
-        <br></br>
-        <Link to="/add">Add a joke</Link>
+        <div className="container">
+          <div className="row">
+            <Link to="/jokes">Click here to view all jokes</Link>
+          </div>
+          <div className="row">
+            <Link to="/add">Add a joke</Link>
+          </div>
+          <div className="row">
+            <Link to="/authors">All authors</Link>
+          </div>
+        </div>
         <LoginLogoutButton/>
         {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
       </>
