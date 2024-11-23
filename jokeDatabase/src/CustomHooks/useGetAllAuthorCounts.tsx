@@ -1,14 +1,15 @@
 import { useQuery, useQueryClient, UseQueryResult } from "@tanstack/react-query"
+import { AuthorCount } from "../DataTransfer/AuthorCount";
 
-export default function useGetAllAuthors(): 
-{getQuery: UseQueryResult<[string, number][], unknown>, invalidate: () => void;}
+export default function useGetAllAuthorCounts(): 
+{getQuery: UseQueryResult<AuthorCount[], unknown>, invalidate: () => void;}
 {
     const baseURL = "http://localhost:5096/" //TODO: set in environment variables
     const queryClient = useQueryClient(); // Access the QueryClient
     console.log("Called get all jokes");
     const getQuery = useQuery({
         queryKey: ['allAuthors'],
-        queryFn: async(): Promise<[string, number][]>  => {
+        queryFn: async(): Promise<AuthorCount[]>  => {
             //put our function in here
             //I'm following along with https://antematter.io/blogs/simplify-api-data-fetching-with-tanstack-queries 
             const data = await fetch(baseURL + 'authors');

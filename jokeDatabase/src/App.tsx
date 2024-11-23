@@ -6,7 +6,7 @@ import { AllJokes } from './Pages/AllJokes'
 import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
 import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
-import { JokeDisplay } from './DisplayComponents/JokeDisplay'
+import { JokeDisplay } from './ReusableLayoutComponents/JokeDisplay'
 import { AddJoke } from './Pages/Add'
 import { AllAuthors } from './Pages/Authors'
 
@@ -55,6 +55,7 @@ function HomePageContent() {
       <>
         {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
         <p>User is authorized, {GetCurrentUserEmail()}</p>
+        <LoginLogoutButton/>
         <div className="container">
           <div className="row">
             <Link to="/jokes">Click here to view all jokes</Link>
@@ -66,7 +67,6 @@ function HomePageContent() {
             <Link to="/authors">All authors</Link>
           </div>
         </div>
-        <LoginLogoutButton/>
         {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
       </>
     )

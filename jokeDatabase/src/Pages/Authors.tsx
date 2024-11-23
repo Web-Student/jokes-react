@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom";
 // import { toast, Toaster } from "sonner";
-import useGetAllAuthors from "../CustomHooks/useGetAllAuthors";
-import { AuthorDisplay } from "../DisplayComponents/AuthorDisplay";
+import useGetAllAuthorCounts from "../CustomHooks/useGetAllAuthorCounts";
+import { AuthorDisplay } from "../ReusableLayoutComponents/AuthorDisplay";
 
 export const AllAuthors: React.FC = () => {
-    const {getQuery } = useGetAllAuthors();
+    const {getQuery } = useGetAllAuthorCounts();
     const authors = getQuery.data || []
 
     if (getQuery.isLoading) {
@@ -37,12 +37,12 @@ export const AllAuthors: React.FC = () => {
       <>
         <Link to="/">Home</Link>
         {/* <LoginLogoutButton/> */}
-        {authors.map((author, index: number) => (
+        {authors.map((authorCount, index: number) => (
           <div>
             <button>
                     All jokes
             </button>
-            <AuthorDisplay key = {index} author = {[author[0], author[1]]}></AuthorDisplay>
+            <AuthorDisplay key = {index} person = {authorCount}></AuthorDisplay>
           </div>
         ))}
         

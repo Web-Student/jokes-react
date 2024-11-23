@@ -1,8 +1,10 @@
+import { AuthorCount } from "../DataTransfer/AuthorCount";
+
 interface Props {
-    author: [string, number];
+    person: AuthorCount;
 }
 
-export const AuthorDisplay: React.FC<Props> = ({author}) => {
+export const AuthorDisplay: React.FC<Props> = ({person}) => {
     //const deleteMutation = useDeleteJoke();
 
     //Idea: 
@@ -12,8 +14,8 @@ export const AuthorDisplay: React.FC<Props> = ({author}) => {
                 {/* <button onClick = {() => { handleDelete(deleteMutation, joke.id)}}>
                     <TrashCanIcon />
                 </button> */}
-                <p className="card-title">{author[0]}</p>  //author email
-                <p className="card-text">author of {author[1]} jokes</p>
+                <p className="card-title">{person.author == "" ? "Anonymous": person.author}</p>
+                <p className="card-text">author of {person.count} jokes</p>
                 {/*idea: They could click a star to mark an author as their favorite, and have a "favorite authors" page */}
             </div>
             {/* <Toaster richColors position="bottom-center" /> */}
