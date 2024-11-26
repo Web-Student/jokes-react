@@ -9,7 +9,7 @@ import { GetCurrentUserEmail } from "../Authentication/authServices"
 export const AddJoke:React.FC = () => {
     const userEmail = GetCurrentUserEmail()
     const [newJoke, setNewJoke] = useState<Joke>({
-        // id: undefined,
+        id: Date.now() % 100000,
         question: "",
         answer: "",
         author: userEmail ?? ""
@@ -22,7 +22,7 @@ export const AddJoke:React.FC = () => {
 
         toast.success ("joke added!")
         setNewJoke({
-            id: 0,
+            id: Date.now() % 100000,
             question: "",
             answer: "",
             author: userEmail ?? ""
