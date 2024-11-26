@@ -20,8 +20,9 @@ const JokesByAuthorWrapper: React.FC = () => {
 }
 
 const EditJokeWrapper: React.FC = () => {
-  const {jokeid} = useParams<{jokeid:number}> ();
-  return <Edit jokeid = {jokeid!}/>
+  const {jokeid} = useParams<{jokeid:string}> ();
+  console.log(`trying to convert ${jokeid} to a number`)
+  return <Edit jokeid = {Number(jokeid!)}/>
 }
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path="/" element={<HomePageContent/>} />
         <Route path="/add" element={<AddJoke/>} />
         <Route path="/authors" element={<AllAuthors/>} />
-        <Route path={`/edit/:number`} element={<EditJokeWrapper/>} />
+        <Route path={`/edit/:jokeid`} element={<EditJokeWrapper/>} />
         <Route path="/jokes" element={<AllJokes/>} />
         <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
         <Route path="/search" element={<Search/>} />
