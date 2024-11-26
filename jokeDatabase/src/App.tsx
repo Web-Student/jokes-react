@@ -10,11 +10,18 @@ import { JokeDisplay } from './ReusableLayoutComponents/JokeDisplay'
 import { AddJoke } from './Pages/Add'
 import { AllAuthors } from './Pages/Authors'
 import { JokesByAuthor } from './Pages/JokesByAuthor'
+import { Edit } from './Pages/Edit'
+import { Search } from './Pages/Search'
 
 //Needed so we can pass a parameter
 const JokesByAuthorWrapper: React.FC = () => {
   const {author} = useParams<{author:string}> ();
   return <JokesByAuthor author={author!} />;
+}
+
+const EditJokeWrapper: React.FC = () => {
+  const {jokeid} = useParams<{jokeid:number}> ();
+  return <Edit jokeid = {jokeid!}/>
 }
 
 function App() {
@@ -23,8 +30,10 @@ function App() {
         <Route path="/" element={<HomePageContent/>} />
         <Route path="/add" element={<AddJoke/>} />
         <Route path="/authors" element={<AllAuthors/>} />
+        <Route path={`/edit/:number`} element={<EditJokeWrapper/>} />
         <Route path="/jokes" element={<AllJokes/>} />
         <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
+        <Route path="/search" element={<Search/>} />
       </Routes>
   )
 }
@@ -63,8 +72,11 @@ function HomePageContent() {
       <>
         {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
         <p>User is authorized, {GetCurrentUserEmail()}</p>
-        <LoginLogoutButton/>
+        <LoginLogoutButton/> 
         <div className="container">
+          <div className="row">
+            <Link to="/search">Search</Link>
+          </div>
           <div className="row">
             <Link to="/jokes">Click here to view all jokes</Link>
           </div>

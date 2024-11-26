@@ -423,9 +423,46 @@ Rubric Items completed:
 ### Nov 23 Actual
 ### Nov 23
     Goal for features completed:
-    - [] Submit a request to edit another user’s joke. (perhaps the author had a typo)
+    - [1/2] Submit a request to edit another user’s joke. (perhaps the author had a typo)
     - [] Review requests for edit on your joke, and approve or deny them.
     - [] Ensure on the requests it is mobile friendly, perhaps has an alternate comparison layout for mobile
+
+    what I did instead:
+    - Last time after I submitted I uncommented the authentication and that works again
+            Note: I’m not doing all the token stuff we did in class though, just login with username/password
+    - Now when we add a joke we get the current user and submit them as the “author” of the joke.
+    - I added the “get all authors” page that I was supposed to add last time, so now we can retrieve all authors and the count of how many jokes they have contributed.
+    -    With that, now we have another reusable component for displaying things, which I’m hoping counts as a reusable layout component. It holds the author’s name and the count of how many jokes they have submitted. 
+    - We have the link to a get jokes by authors page
+    - I added a link to the edit joke by id page, but am only half done with actually implementing that.
+
+
+Rubric Items completed:  
+- [] Technology: Local storage /5  
+- [5] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+- [5] Technology: Toasts / Global notifications or alerts /5  
+- [] Technology: Error handling (API requests and render errors) /5  
+- [5] Technology: Network calls for reading and writing data /5 
+- [5] Technology: TypeScript for developer assistance /5  
+- [3] Technology: 10+ pages or views /5  
+    - View all jokes
+    - Joke Generator
+    - add new joke
+    - all authors
+    - jokes by author (1/2 implemented)
+
+- [3] Technology: CI/CD pipeline /5  
+- [] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+- [] Technology: Linting in pipeline /5  
+- [] Technology: 3+ generic form input components /9  
+- [3] Technology: 4+ generic layout components /12  
+    - component 1: layout to display a joke
+    - component 2: dispay an author & how many jokes they have submitted
+- [5] Technology: Authentication and user account support /10  
+- [] Technology: Authorized and public pages /5  
+- [3] Experience: All experiences mobile-friendly /5   (right now they are,but need to check for future)
+- [] Experience: 3 instances of reordering elements on smaller screens /5  
+- [6] Professional, organized, and smooth experience /20  
 
 
 #### personal notes on testing frameworks
