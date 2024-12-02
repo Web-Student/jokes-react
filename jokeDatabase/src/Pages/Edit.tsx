@@ -12,7 +12,8 @@ interface JokesByAuthorProps {
 
 
 export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
-    const {getQuery, invalidate } = useGetJokeById(jokeid);
+    // const {getQuery, invalidate } = useGetJokeById(jokeid);
+    const {getQuery} = useGetJokeById(jokeid); //TODO: invalidate jokes
     const originalJoke = getQuery.data || {
         question: "Error retrieving joke",
         answer: "error retrieving joke",

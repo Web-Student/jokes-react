@@ -14,8 +14,11 @@ export const TextInput:React.FC<Params> = ({label, defaultValue}) => {
     }
     return (
         <>
-            <label>{label}</label>
-            <input value={data} onChange={(e) => inputChange(e.target.value)} className="w-80 p-3"/>
+            <div className="p-2">
+
+                <label className="p-2 m-2">{label}</label>
+                <input value={data} onChange={(e) => inputChange(e.target.value)} className="w-180 p-2 m-2"/>
+            </div>
         </>
     )
 }

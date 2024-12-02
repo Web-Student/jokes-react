@@ -465,6 +465,44 @@ Rubric Items completed:
 - [6] Professional, organized, and smooth experience /20  
 
 
+
+### Nov 26 Actual
+    Goal for features completed:
+    [1/x] Search for a joke page
+    [] stretch goal: simple stats page on how many users we have, how many jokes, etc. 
+    [] Double-check we have appropriate error handling
+    [] as needed: a generic reusable error display component may be helpful 
+
+
+Rubric Items completed:  
+- [] Technology: Local storage /5  
+- [5] Technology: Client-side state stores (e.g., TanStack Query or Context) /5  
+- [5] Technology: Toasts / Global notifications or alerts /5  
+- [] Technology: Error handling (API requests and render errors) /5  
+- [5] Technology: Network calls for reading and writing data /5 
+- [5] Technology: TypeScript for developer assistance /5  
+- [3] Technology: 10+ pages or views /5  
+    - View all jokes
+    - Joke Generator
+    - add new joke
+    - all authors
+    - jokes by author (1/2 implemented)
+    - search for a joke
+- [3] Technology: CI/CD pipeline /5  
+- [] Technology: Tests run in pipeline, pipeline aborts on failure /5  
+- [] Technology: Linting in pipeline /5  
+- [] Technology: 3+ generic form input components /9  
+    - Text input component
+- [3] Technology: 4+ generic layout components /12  
+    - component 1: layout to display a joke
+    - component 2: dispay an author & how many jokes they have submitted
+- [5] Technology: Authentication and user account support /10  
+- [] Technology: Authorized and public pages /5  
+- [3] Experience: All experiences mobile-friendly /5   (right now they are,but need to check for future)
+- [] Experience: 3 instances of reordering elements on smaller screens /5  
+- [6] Professional, organized, and smooth experience /20  
+
+
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)
 - vitest (made by the people who created vite)

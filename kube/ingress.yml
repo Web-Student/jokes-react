@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: joke-client-ingress
-  namespace: rachel
+  namespace: rjoke
 spec:
   rules:
   - host: rachelrecipe.duckdns.org
