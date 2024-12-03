@@ -1,4 +1,3 @@
-import { Link, Route, Routes, useParams } from 'react-router-dom'
 import './App.css'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
@@ -12,6 +11,7 @@ import { AllAuthors } from './Pages/Authors'
 import { JokesByAuthor } from './Pages/JokesByAuthor'
 import { Edit } from './Pages/Edit'
 import { Search } from './Pages/Search'
+import { Link, Route, Routes, useParams } from 'react-router';
 
 //Needed so we can pass a parameter
 const JokesByAuthorWrapper: React.FC = () => {

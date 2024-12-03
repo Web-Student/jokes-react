@@ -1,12 +1,12 @@
 import React from "react"
 import useGetAllJokes from "../CustomHooks/useGetAllJokes";
-import { Link } from "react-router-dom";
 import { Joke } from "../DataTransfer/Joke";
 import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 import { TrashCanIcon } from "../svg/TrashCanIcon";
 import { toast, Toaster } from "sonner";
 import { UseMutationResult } from "@tanstack/react-query";
 import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
+import { Link } from "react-router";
 
 export const AllJokes: React.FC = () => {
     const {getQuery, invalidate } = useGetAllJokes();

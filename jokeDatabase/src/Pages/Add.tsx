@@ -1,10 +1,10 @@
 
-import { Link } from "react-router-dom"
 import { Joke } from "../DataTransfer/Joke"
 import { useState } from "react"
 import { useAddJoke } from "../CustomHooks/useAddJoke"
 import { Toaster, toast } from 'sonner'
 import { GetCurrentUserEmail } from "../Authentication/authServices"
+import { Link } from "react-router"
 
 export const AddJoke:React.FC = () => {
     const userEmail = GetCurrentUserEmail()

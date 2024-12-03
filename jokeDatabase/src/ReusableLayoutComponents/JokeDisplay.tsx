@@ -1,7 +1,7 @@
 import React from "react"
 import { Joke } from "../DataTransfer/Joke"
 import { PencilIcon } from "../svg/PencilIcon";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 //import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
 //import { TrashCanIcon } from "../svg/TrashCanIcon";
 //import { toast, Toaster } from "sonner";

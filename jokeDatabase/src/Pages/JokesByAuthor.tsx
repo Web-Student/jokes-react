@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom";
 import { Joke } from "../DataTransfer/Joke";
 import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 import { TrashCanIcon } from "../svg/TrashCanIcon";
@@ -8,6 +7,7 @@ import { UseMutationResult } from "@tanstack/react-query";
 import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
 import useGetAllJokesByAuthor from "../CustomHooks/useGetAllJokesByAuthor";
 import LoginLogoutButton from "../Authentication/LoginLogoutButton";
+import { Link } from "react-router";
 
 interface JokesByAuthorProps {
     author: string;

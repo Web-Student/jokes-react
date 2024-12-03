@@ -1,8 +1,8 @@
 import React from "react"
-import { Link } from "react-router-dom";
 // import { toast, Toaster } from "sonner";
 import useGetAllAuthorCounts from "../CustomHooks/useGetAllAuthorCounts";
 import { AuthorDisplay } from "../ReusableLayoutComponents/AuthorDisplay";
+import { Link } from "react-router";
 
 export const AllAuthors: React.FC = () => {
     const {getQuery } = useGetAllAuthorCounts();

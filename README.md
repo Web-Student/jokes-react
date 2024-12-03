@@ -503,6 +503,10 @@ Rubric Items completed:
 - [6] Professional, organized, and smooth experience /20  
 
 
+### Dec 4 actual:
+- added a MyJokes page to display just the jokes I've submitted (will allow a place for viewing private jokes)
+- fixed db connection error on kubernetes
+
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)
 - vitest (made by the people who created vite)

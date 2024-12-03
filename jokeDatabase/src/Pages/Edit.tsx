@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 //import { toast, Toaster } from "sonner";
 
@@ -7,6 +6,7 @@ import useGetJokeById from "../CustomHooks/useGetJokeById";
 import { Toaster } from "sonner";
 import { TextInput } from "../ReusableInputComponents/TextInput";
 import { useState } from "react";
+import { Link } from "react-router";
 
 interface JokesByAuthorProps {
     jokeid: number;
