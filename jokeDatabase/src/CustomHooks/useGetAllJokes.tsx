@@ -4,7 +4,9 @@ import { Joke } from "../DataTransfer/Joke";
 export default function useGetAllJokes(): 
 {getQuery: UseQueryResult<Joke[], unknown>, invalidate: () => void;}
 {
-    const baseURL = "http://localhost:5096/" //TODO: set in environment variables
+    //const baseURL = "http://localhost:5096/" //TODO: set in environment variables
+    const baseURL = import.meta.env.VITE_BASEURL;
+    console.log(baseURL);
     const queryClient = useQueryClient(); // Access the QueryClient
     console.log("Called get all jokes");
     const getQuery = useQuery({
