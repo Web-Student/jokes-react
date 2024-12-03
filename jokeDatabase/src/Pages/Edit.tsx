@@ -21,7 +21,9 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
         answer: "error retrieving joke",
         author: ""
     }
-    const [editedJoke, setEditedJoke] = useState(originalJoke)
+    // const [editedJoke, setEditedJoke] = useState(originalJoke)
+    const [editedJoke] = useState(originalJoke)
+
 
     const validationFunction = () => {
       return true;
