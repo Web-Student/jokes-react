@@ -5,6 +5,8 @@ import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 import LoginLogoutButton from "../Authentication/LoginLogoutButton";
 import useGetJokeById from "../CustomHooks/useGetJokeById";
 import { Toaster } from "sonner";
+import { TextInput } from "../ReusableInputComponents/TextInput";
+import { useState } from "react";
 
 interface JokesByAuthorProps {
     jokeid: number;
@@ -19,7 +21,11 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
         answer: "error retrieving joke",
         author: ""
     }
-    //const [editedJoke, setEditedJoke] = useState(originalJoke)
+    const [editedJoke, setEditedJoke] = useState(originalJoke)
+
+    const validationFunction = () => {
+      return true;
+    }
 
 
     // const deleteMutation = useDeleteJoke();
@@ -51,7 +57,10 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
     else {
       console.log("jokes contains" ,originalJoke)
     }
-    
+    const EditJoke = (e:React.FormEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+    }
+
     return (
       <>
         <LoginLogoutButton/>
@@ -62,10 +71,15 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
                     <h3>Original Joke:</h3>
                     <JokeDisplay joke={originalJoke} />
                 </div>
-                <div className="column">
+                <form className="column">
                     <h3>Edited Version:</h3>
-                    <p>I need to turn the input form from my "add joke page" into a reusable input component, pass it a parameter for default vaues (default joke), and render that here</p>
-                </div>
+                    <TextInput label={"Question"} defaultValue={editedJoke.question} validationFunction={validationFunction}/>
+                    <TextInput label={"Answer"} defaultValue={editedJoke.answer} validationFunction={validationFunction} />
+                    <p>Edited question: {editedJoke.question}</p>
+                    <p>Edited answer: {editedJoke.answer} </p>
+                    <br></br>
+                    <button className="btn btn-secondary" onSubmit={(e) => EditJoke(e)}>Request Edit</button>
+                </form>
             </div>
         </div>
         
