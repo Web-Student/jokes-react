@@ -1,4 +1,5 @@
 import { Link } from "react-router"
+import { NavbarLink } from "./NavbarLink"
 
 export const Navigation = () => {
     return (
@@ -19,6 +20,7 @@ export const Navigation = () => {
                 <div className="nav-item">
                     <Link to="/authors">All authors</Link>
                 </div>
+                <NavbarLink text="sampleLink" path="/" />
             </div>
         </>
     )
