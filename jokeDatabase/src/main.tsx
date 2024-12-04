@@ -5,6 +5,7 @@ import App from './App.tsx'
 import { AuthProvider } from 'react-oidc-context';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router';
+import { Navigation } from './ReusableLayoutComponents/Navbar.tsx';
 
 const oidcConfig = {
   authority: "https://auth.snowse.duckdns.org/realms/advanced-frontend/",
@@ -21,7 +22,12 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <App />
+        <div className="d-flex flex-column">
+          <Navigation/>
+          <div className="min-vh-100">
+            <App />
+          </div>
+        </div>
         </BrowserRouter>
       </QueryClientProvider>
     </StrictMode>

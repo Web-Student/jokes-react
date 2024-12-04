@@ -12,6 +12,7 @@ import { JokesByAuthor } from './Pages/JokesByAuthor'
 import { Edit } from './Pages/Edit'
 import { Search } from './Pages/Search'
 import { Link, Route, Routes, useParams } from 'react-router';
+import { MyJokes } from './Pages/MyJokes';
 
 //Needed so we can pass a parameter
 const JokesByAuthorWrapper: React.FC = () => {
@@ -27,6 +28,7 @@ const EditJokeWrapper: React.FC = () => {
 
 function App() {
   return (
+    <>
       <Routes>
         <Route path="/" element={<HomePageContent/>} />
         <Route path="/add" element={<AddJoke/>} />
@@ -34,8 +36,10 @@ function App() {
         <Route path={`/edit/:jokeid`} element={<EditJokeWrapper/>} />
         <Route path="/jokes" element={<AllJokes/>} />
         <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
+        <Route path={`/myjokes`} element={<MyJokes/>} />
         <Route path="/search" element={<Search/>} />
       </Routes>
+    </>
   )
 }
 
@@ -76,16 +80,7 @@ function HomePageContent() {
         <LoginLogoutButton/> 
         <div className="container">
           <div className="row">
-            <Link to="/search">Search</Link>
-          </div>
-          <div className="row">
-            <Link to="/jokes">Click here to view all jokes</Link>
-          </div>
-          <div className="row">
-            <Link to="/add">Add a joke</Link>
-          </div>
-          <div className="row">
-            <Link to="/authors">All authors</Link>
+            <Link to="/myjokes">My jokes</Link>
           </div>
         </div>
         {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}

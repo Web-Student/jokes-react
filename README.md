@@ -506,6 +506,10 @@ Rubric Items completed:
 ### Dec 4 actual:
 - added a MyJokes page to display just the jokes I've submitted (will allow a place for viewing private jokes)
 - fixed db connection error on kubernetes
+- added another reusable layout component (the navbar)
+
+# idea: I could make a reusable layout component for each link inside my navbar, if that helps with styling
+# idea: for localstorage, just store the ids of which jokes the answer should be visible on
 
 #### personal notes on testing frameworks
 - jest  (mostly supported, been around for a while)
