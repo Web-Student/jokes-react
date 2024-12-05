@@ -1,12 +1,14 @@
 import { useQuery, useQueryClient, UseQueryResult } from "@tanstack/react-query"
 import { Joke } from "../DataTransfer/Joke";
+import { GetBaseURL } from "../DataTransfer/GetBaseUrl";
 
 export default function useGetJokeById(jokeid: number): 
 {getQuery: UseQueryResult<Joke, unknown>, invalidate: () => void;}
 {
-    const baseURL = "http://localhost:5096/" //TODO: set in environment variables
+    //const baseURL = "http://localhost:5096/" 
+    const baseURL = GetBaseURL();
     const queryClient = useQueryClient(); // Access the QueryClient
-    console.log("Called get all jokes");
+    console.log("Called get joke by id ", jokeid);
     const getQuery = useQuery({
         queryKey: ['allJokes'],
         queryFn: async(): Promise<Joke>  => {

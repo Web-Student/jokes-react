@@ -1,9 +1,11 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Joke } from "../DataTransfer/Joke";
+import { GetBaseURL } from "../DataTransfer/GetBaseUrl";
 
 export default function useGetRandomJoke(): UseQueryResult<Joke, unknown> {
-    const baseURL = "http://localhost:5096/" //TODO: set in environment variables
-    //ToDO: move the base url into a custom hook to return the base url, which can do the localhost vs api logic and environment variable reading
+    //const baseURL = "http://localhost:5096/" 
+    const baseURL = GetBaseURL();
+    
     return (
         useQuery({
             queryKey: ['randomJoke'],
