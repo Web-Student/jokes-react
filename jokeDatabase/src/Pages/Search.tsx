@@ -13,12 +13,11 @@ export const Search:React.FC = () => {
     }
     return (
         <>
-            <TextInput label="search" defaultValue="Search for a joke by text or author ..." validationFunction={isValid}></TextInput>
-            <p>Insert reusable input component here for them to search with.</p>
-            <p>This is the component where we can search for a page. I would love for it to just drop down from the top but don't know how</p>
+            <TextInput label="Search" defaultValue="Search for a joke ..." validationFunction={isValid}></TextInput>
+            <p>Go look at contexts (from the list detail assignment) to implement the data binding</p>
 
             <div>
-                {jokes.filter(j => j.question && j.question.includes('ques')).map((joke, index) => (
+                {jokes.filter(j => (j.question && j.question.includes('how')) || (j.answer && j.answer.includes('how'))).map((joke, index) => (
                     <div key={index}>
                         <JokeDisplay joke={joke}></JokeDisplay>
                     </div>
