@@ -48,7 +48,7 @@ export const AddJoke:React.FC = () => {
                     onChange={(e) => setNewJoke((oldJoke) => ({... oldJoke, answer: e.target.value}))}
                     />
                 </div>
-                <Toaster richColors position="bottom-center" invert/>
+                <Toaster richColors position="top-center" invert/>
                 <p>Current user adding the joke is: {userEmail}</p>
                 <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
 
