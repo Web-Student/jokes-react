@@ -5,7 +5,7 @@ import { GetBaseURL } from "../DataTransfer/GetBaseUrl";
 export default function useGetRandomJoke(): UseQueryResult<Joke, unknown> {
     //const baseURL = "http://localhost:5096/" 
     const baseURL = GetBaseURL();
-    
+    console.log("base url is ", baseURL);
     return (
         useQuery({
             queryKey: ['randomJoke'],
