@@ -4,7 +4,7 @@ import { NavbarLink } from "./NavbarLink"
 export const Navigation = () => {
     return (
         <>
-            <div className="navbar">
+            <div className="navbar bg-secondary">
                 <div className="nav-item p-3">
                     <Link to="/">Joke of the day</Link>
                 </div>

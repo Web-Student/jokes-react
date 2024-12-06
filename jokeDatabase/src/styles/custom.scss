@@ -1,4 +1,8 @@
-$primary: #a9d7fc;
+//color palette: https://colorhunt.co/palette/ffffecf1e4c3c6a969597e52
+
+//$primary: #a9d7fc;
+$primary: #597E52;
+$secondary: rgb(198, 169, 105);
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -6,10 +10,12 @@ $primary: #a9d7fc;
 
 
 $custom-colors: (
-  "alexcolor": hsl(166, 56%, 28%),
-  "custom-bg": hsla(164, 22%, 76%, 0)
+  "custom-bg": hsl(60, 100%, 96.27%),
+  "tertiary": rgb(241, 228, 195),
+  "secondary": rgb(160, 111, 4)
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+

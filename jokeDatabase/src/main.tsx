@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <div className="min-vh-100 min-vw-100 bg-custom-bg p-3">
+          <div className="min-vh-100 bg-tertiary p-3">
             <Navigation/>
             <App />
           </div>

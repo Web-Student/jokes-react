@@ -32,7 +32,7 @@ const defaultJoke:Joke = {
 export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
     //const deleteMutation = useDeleteJoke();
     return (
-        <div className = "card">
+        <div className = "card bg-custom-bg">
             <div className="card-body">
                 {/* <button onClick = {() => { handleDelete(deleteMutation, joke.id)}}>
                     <TrashCanIcon />
