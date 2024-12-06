@@ -504,15 +504,16 @@ Rubric Items completed:
 
 
 ### Dec 4 actual:
-- added a MyJokes page to display just the jokes I've submitted (will allow a place for viewing private jokes)
-    ## note: the myJokes page isn't correctly loading data yet
+- added a MyJokes page to display just the jokes I've submitted (will allow a place for viewing private jokes), although it's not all working yet.
+    (note: the myJokes page isn't correctly loading data yet)
 - fixed db connection error on kubernetes
 - added another reusable layout component (the navbar)
 - added another reusable layout component (the individual links in the navbar)
 - added .env variables to read the redirect uri, base url, etc.
+- added a hook I can call to just retrieve the base url each time I make an api call so if I change the environment variable name i only have to change it in one place, not 8.
+- added a custom.scss file, although my styles aren't working as I intended yet.
 
-# idea: I could make a reusable layout component for each link inside my navbar, if that helps with styling
-# idea: for localstorage, just store the ids of which jokes the answer should be visible on
+##### idea: for localstorage, just store the ids of which jokes the answer should be visible on
 
 ## Dec 4 rubric completion:
 Rubric Items completed:  
@@ -529,19 +530,20 @@ Rubric Items completed:
     - all authors
     - jokes by author (1/2 implemented)
     - search for a joke (1/2 implemented)
-    - user's submitted jokes
-- [3] Technology: CI/CD pipeline /5  
+    - user's submitted jokes (1/2 implemented)
+- [5] Technology: CI/CD pipeline /5  
 - [] Technology: Tests run in pipeline, pipeline aborts on failure /5  
 - [5] Technology: Linting in pipeline /5 
 - [] Technology: 3+ generic form input components /9  
     - Text input component
-- [3] Technology: 4+ generic layout components /12  
+- [9 or 12] Technology: 4+ generic layout components /12  
     - component 1: layout to display a joke
     - component 2: dispay an author & how many jokes they have submitted
     - component 3: individual navbar link components (a component for each link), as these are reusable.
-- [5] Technology: Authentication and user account support /10  
+    - component 4 ?? does the navbar count?
+- [3] Technology: Authentication and user account support /10  
 - [] Technology: Authorized and public pages /5  
-- [3] Experience: All experiences mobile-friendly /5   (right now they are,but need to check for future)
+- [3] Experience: All experiences mobile-friendly /5   
 - [] Experience: 3 instances of reordering elements on smaller screens /5  
 - [6] Professional, organized, and smooth experience /20  
 

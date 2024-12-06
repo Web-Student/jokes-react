@@ -22,12 +22,10 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-        <div className="d-flex flex-column">
-          <Navigation/>
-          <div className="min-vh-100">
+          <div className="min-vh-100 min-vw-100 bg-custom-bg p-3">
+            <Navigation/>
             <App />
           </div>
-        </div>
         </BrowserRouter>
       </QueryClientProvider>
     </StrictMode>

@@ -1,0 +1,15 @@
+$primary: #a9d7fc;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+
+$custom-colors: (
+  "alexcolor": hsl(166, 56%, 28%),
+  "custom-bg": hsla(164, 22%, 76%, 0)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";

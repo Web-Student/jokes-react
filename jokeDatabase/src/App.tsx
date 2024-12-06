@@ -1,4 +1,4 @@
-import './App.css'
+import './styles/custom.scss'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
 import { AllJokes } from './Pages/AllJokes'
@@ -29,16 +29,20 @@ const EditJokeWrapper: React.FC = () => {
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<HomePageContent/>} />
-        <Route path="/add" element={<AddJoke/>} />
-        <Route path="/authors" element={<AllAuthors/>} />
-        <Route path={`/edit/:jokeid`} element={<EditJokeWrapper/>} />
-        <Route path="/jokes" element={<AllJokes/>} />
-        <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
-        <Route path={`/myjokes`} element={<MyJokes/>} />
-        <Route path="/search" element={<Search/>} />
-      </Routes>
+      {/* <div className="App bg-custom-bg min-vh-100 py-15"> */}
+        <Routes>
+          <Route path="/" element={<HomePageContent/>} />
+          <Route path="/add" element={<AddJoke/>} />
+          <Route path="/authors" element={<AllAuthors/>} />
+          <Route path={`/edit/:jokeid`} element={<EditJokeWrapper/>} />
+          <Route path="/jokes" element={<AllJokes/>} />
+          <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
+          <Route path={`/myjokes`} element={<MyJokes/>} />
+          <Route path="/search" element={<Search/>} />
+        </Routes>
+        {/* <Navigation/> */}
+        {/* <p>Main page content here</p> */}
+      {/* </div> */}
     </>
   )
 }
