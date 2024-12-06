@@ -1,6 +1,5 @@
 import './styles/custom.scss'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
-import LoginLogoutButton from './Authentication/LoginLogoutButton'
 import { AllJokes } from './Pages/AllJokes'
 // import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
 // import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
@@ -48,7 +47,6 @@ function App() {
 }
 
 function HomePageContent() {
-    const authorized = IsAuthorized("rachel.allen1@students.snow.edu")
     const { data: joke, isLoading, isError } = useGetRandomJoke();
     const defaultJoke = {
       id: 1,
@@ -57,14 +55,7 @@ function HomePageContent() {
       author: "example@mail.net"
     };
     console.log("Joke 1 is ", joke);
-    // if (!authorized) {
-    //   return (
-    //     <>
-    //     <p> User is not authorized, {GetCurrentUserEmail()}</p>
-    //     <LoginLogoutButton/>
-    //     </>
-    //   )
-    // }
+
     if (isLoading) {
       console.log("Data is loading")
       return (
@@ -80,9 +71,6 @@ function HomePageContent() {
     return (
       <>
         {GetCurrentUserEmail() ? <p>Hello {GetCurrentUserEmail()}</p>: <p></p>}
-        {/* {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
-        <p>User is authorized, {GetCurrentUserEmail()}</p> */}
-        {/* <LoginLogoutButton/>  */}
         <div className="container">
           <div className="row">
             <Link to="/myjokes">My jokes</Link>
