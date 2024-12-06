@@ -57,14 +57,14 @@ function HomePageContent() {
       author: "example@mail.net"
     };
     console.log("Joke 1 is ", joke);
-    if (!authorized) {
-      return (
-        <>
-        <p> User is not authorized, {GetCurrentUserEmail()}</p>
-        <LoginLogoutButton/>
-        </>
-      )
-    }
+    // if (!authorized) {
+    //   return (
+    //     <>
+    //     <p> User is not authorized, {GetCurrentUserEmail()}</p>
+    //     <LoginLogoutButton/>
+    //     </>
+    //   )
+    // }
     if (isLoading) {
       console.log("Data is loading")
       return (
@@ -79,9 +79,10 @@ function HomePageContent() {
     
     return (
       <>
-        {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
-        <p>User is authorized, {GetCurrentUserEmail()}</p>
-        <LoginLogoutButton/> 
+        {GetCurrentUserEmail() ? <p>Hello {GetCurrentUserEmail()}</p>: <p></p>}
+        {/* {authorized ? <p>Authorized</p> : <p>Not authorized</p>}
+        <p>User is authorized, {GetCurrentUserEmail()}</p> */}
+        {/* <LoginLogoutButton/>  */}
         <div className="container">
           <div className="row">
             <Link to="/myjokes">My jokes</Link>

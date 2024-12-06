@@ -27,14 +27,14 @@ export const LoginLogoutButton = () => {
     }
 
     if (auth.error) {
-        return <div>Oops... {auth.error.message}</div>;
+        return <div>Error... {auth.error.message}</div>;
     }
 
     if (auth.isAuthenticated) {
         return (
         <div>
-            Hello {auth.user?.profile.sub}{" "}
-            <button onClick={() => {
+            {/* Hello {auth.user?.profile.sub}{" "} */}
+            <button className="btn btn-primary" onClick={() => {
                 void auth.removeUser()
                 deleteCookie("auth_token")
             }}>Log out</button>

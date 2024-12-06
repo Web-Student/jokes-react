@@ -1,5 +1,6 @@
 import { Link } from "react-router"
 import { NavbarLink } from "./NavbarLink"
+import LoginLogoutButton from "../Authentication/LoginLogoutButton"
 
 export const Navigation = () => {
     return (
@@ -21,6 +22,7 @@ export const Navigation = () => {
                     <Link to="/authors">All authors</Link>
                 </div>
                 <NavbarLink text="sampleLink" path="/" />
+                <LoginLogoutButton/>
             </div>
         </>
     )

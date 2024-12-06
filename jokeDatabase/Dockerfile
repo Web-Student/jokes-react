@@ -4,7 +4,8 @@ COPY . .
 RUN echo "Ls"
 #RUN cd ./jokeDatabase
 RUN npm install
-ENV VITE_BASEURL "http://api.rachelrecipe.duckdns.org/"
+# changed this
+ENV VITE_BASEURL "https://api.rachelrecipe.duckdns.org/"
 ENV VITE_REDIRECT_URI "https://rachelrecipe.duckdns.org/"
 
 RUN npm run build
