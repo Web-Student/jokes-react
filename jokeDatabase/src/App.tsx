@@ -2,8 +2,8 @@ import './styles/custom.scss'
 import { GetCurrentUserEmail, IsAuthorized } from './Authentication/authServices'
 import LoginLogoutButton from './Authentication/LoginLogoutButton'
 import { AllJokes } from './Pages/AllJokes'
-import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
+// import 'bootstrap/dist/css/bootstrap.min.css';  // Import Bootstrap's CSS
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Import Bootstrap's JavaScript (with Popper.js)
 import useGetRandomJoke from './CustomHooks/useGetRandomJoke'
 import { JokeDisplay } from './ReusableLayoutComponents/JokeDisplay'
 import { AddJoke } from './Pages/Add'

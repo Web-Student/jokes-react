@@ -11,8 +11,7 @@ $secondary: rgb(198, 169, 105);
 
 $custom-colors: (
   "custom-bg": hsl(60, 100%, 96.27%),
-  "tertiary": rgb(241, 228, 195),
-  "secondary": rgb(160, 111, 4)
+  "tertiary": rgb(241, 228, 195)
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
