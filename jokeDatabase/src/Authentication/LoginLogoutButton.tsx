@@ -42,6 +42,6 @@ export const LoginLogoutButton = () => {
         );
     }
 
-    return <button data-testid="LoginButton" onClick={() => void auth.signinRedirect()}>Log in</button>;
+    return <button className="btn btn-primary" data-testid="LoginButton" onClick={() => void auth.signinRedirect()}>Log in</button>;
 }
 export default LoginLogoutButton

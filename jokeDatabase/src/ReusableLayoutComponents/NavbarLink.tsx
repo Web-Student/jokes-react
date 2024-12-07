@@ -7,7 +7,7 @@ interface Props {
 export const NavbarLink:React.FC<Props> = ({path, text}) => {
     return (
         <>
-            <div className="nav-item p-2 bg-success">
+            <div className="nav-item p-2 m-2">
                 <Link to={path}>{text}</Link>
             </div>
         </>

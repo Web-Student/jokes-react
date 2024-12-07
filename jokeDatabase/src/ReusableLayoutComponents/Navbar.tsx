@@ -1,4 +1,3 @@
-import { Link } from "react-router"
 import { NavbarLink } from "./NavbarLink"
 import LoginLogoutButton from "../Authentication/LoginLogoutButton"
 
@@ -6,23 +5,18 @@ export const Navigation = () => {
     return (
         <>
             <div className="navbar bg-secondary">
-                <div className="nav-item p-3">
+                {/* <div className="nav-item p-3">
                     <Link to="/">Joke of the day</Link>
+                </div> */}
+                <NavbarLink text="Home" path="/" />
+                <NavbarLink text="Search" path="/search" />
+                <NavbarLink text="All jokes" path="/jokes"/>
+                <NavbarLink text="Add a joke" path="/add" />
+                <NavbarLink text="All authors" path="/authors" />
+                <NavbarLink text="sample link someday for my jokes" path="/"/>
+                <div className="p-2 m-2">
+                    <LoginLogoutButton/>
                 </div>
-                <div className="nav-item p-3">
-                    <Link to="/search">Search</Link>
-                </div>
-                <div className="nav-item p-3">
-                    <Link to="/jokes">All jokes</Link>
-                </div>
-                <div className="nav-item p-3">
-                    <Link to="/add">Add a joke</Link>
-                </div>
-                <div className="nav-item">
-                    <Link to="/authors">All authors</Link>
-                </div>
-                <NavbarLink text="sampleLink" path="/" />
-                <LoginLogoutButton/>
             </div>
         </>
     )
