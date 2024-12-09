@@ -1,50 +1,49 @@
 import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 //import { toast, Toaster } from "sonner";
-
 import LoginLogoutButton from "../Authentication/LoginLogoutButton";
 import useGetJokeById from "../CustomHooks/useGetJokeById";
 import { Toaster } from "sonner";
 import { TextInput } from "../ReusableInputComponents/TextInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 interface JokesByAuthorProps {
     jokeid: number;
 }
 
-
 export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
     // const {getQuery, invalidate } = useGetJokeById(jokeid);
     const {getQuery} = useGetJokeById(jokeid); //TODO: invalidate jokes
-    const originalJoke = getQuery.data || {
-        question: "Error retrieving joke",
-        answer: "error retrieving joke",
-        author: ""
-    }
-    // const [editedJoke, setEditedJoke] = useState(originalJoke)
-    const [editedJoke] = useState(originalJoke)
-
-
+    console.log("edit joke query data was ", getQuery.data)
+    // const [editedJoke] = useState(originalJoke)
+    
     const validationFunction = () => {
       return true;
     }
+    
+    const handleQuestionChange = (value: string) => {
+      setEditedJoke((oldJoke) => ({...oldJoke, question: value}));
+    }
+    
+    const handleAnswerChange = (value: string) => {
+      setEditedJoke((oldJoke) => ({...oldJoke, answer: value}));
+    }
 
-
-    // const deleteMutation = useDeleteJoke();
-
-    // const handleDelete = (deleteMutation:UseMutationResult<unknown, Error, number>, id?: number,) => {
-    //   if (id === undefined) {
-    //       toast.error("Error deleting joke: joke does not exist")
-    //   }
-      
-    //   deleteMutation.mutate(id ?? 0, {
-    //       onSuccess: () => {
-    //           toast.success("Joke deleted")
-    //           invalidate();
-    //       }
-    //   }) 
-    // }
-
+    
+    const [editedJoke, setEditedJoke] = useState( getQuery.data || {
+      question: "Error retrieving joke",
+      answer: "error retrieving joke",
+      author: ""
+    })
+    
+    const [initiallyFetchedData, setInitiallyFetchedData] = useState(false)
+    useEffect(() => {
+      if (getQuery.data && !initiallyFetchedData) {
+        setEditedJoke(getQuery.data);
+        setInitiallyFetchedData(true);
+      }
+    }, [getQuery.data, initiallyFetchedData])
+    
     if (getQuery.isLoading) {
       console.log("Data is loading")
       return (
@@ -57,12 +56,17 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
       return (<p>Error, please put a custom error component here</p>)
     }
     else {
-      console.log("jokes contains" ,originalJoke)
+      //console.log("jokes contains" ,originalJoke)
     }
     const EditJoke = (e:React.FormEvent<HTMLButtonElement>) => {
       e.preventDefault();
     }
-
+    
+    const originalJoke = getQuery.data || {
+        question: "Error retrieving joke",
+        answer: "error retrieving joke",
+        author: ""
+    }
     return (
       <>
         <LoginLogoutButton/>
@@ -75,17 +79,17 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
                 </div>
                 <form className="column">
                     <h3>Edited Version:</h3>
-                    <TextInput label={"Question"} defaultValue={editedJoke.question} validationFunction={validationFunction}/>
-                    <TextInput label={"Answer"} defaultValue={editedJoke.answer} validationFunction={validationFunction} />
+                    <TextInput label={"Question"} defaultValue={editedJoke.question} validationFunction={validationFunction} onValueChange={handleQuestionChange}/>
+                    <TextInput label={"Answer"} defaultValue={editedJoke.answer} validationFunction={validationFunction} onValueChange={handleAnswerChange} />
                     <p>Edited question: {editedJoke.question}</p>
-                    <p>Edited answer: {editedJoke.answer} </p>
+                    <p>Edited answer: {editedJoke.answer}</p>
                     <br></br>
                     <button className="btn btn-secondary" onSubmit={(e) => EditJoke(e)}>Request Edit</button>
                 </form>
             </div>
         </div>
         
-        <Toaster richColors position="bottom-center" />        
+        <Toaster richColors closeButton position="bottom-center" />        
       </>
     )
 }
