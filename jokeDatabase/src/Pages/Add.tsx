@@ -5,6 +5,7 @@ import { useAddJoke } from "../CustomHooks/useAddJoke"
 import { Toaster, toast } from 'sonner'
 import { GetCurrentUserEmail } from "../Authentication/authServices"
 import { Link } from "react-router"
+import { IncrementLocalJokeCount } from "../LocalStorage/JokesOnThisMachine"
 
 export const AddJoke:React.FC = () => {
     const userEmail = GetCurrentUserEmail()
@@ -17,9 +18,9 @@ export const AddJoke:React.FC = () => {
     const postHook = useAddJoke();
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+        IncrementLocalJokeCount(); //This is where we increment the local count
 
         postHook.mutate(newJoke)
-
         toast.success ("joke added!")
         setNewJoke({
             id: Date.now() % 100000,

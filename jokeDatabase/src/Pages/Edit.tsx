@@ -2,10 +2,11 @@ import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 //import { toast, Toaster } from "sonner";
 import LoginLogoutButton from "../Authentication/LoginLogoutButton";
 import useGetJokeById from "../CustomHooks/useGetJokeById";
-import { Toaster } from "sonner";
+import { toast, Toaster } from "sonner";
 import { TextInput } from "../ReusableInputComponents/TextInput";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { useEditJoke } from "../CustomHooks/useEditJoke";
 
 interface JokesByAuthorProps {
     jokeid: number;
@@ -28,7 +29,8 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
     const handleAnswerChange = (value: string) => {
       setEditedJoke((oldJoke) => ({...oldJoke, answer: value}));
     }
-
+    const editHook = useEditJoke();
+    
     
     const [editedJoke, setEditedJoke] = useState( getQuery.data || {
       question: "Error retrieving joke",
@@ -55,11 +57,16 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
     if (getQuery.isError){
       return (<p>Error, please put a custom error component here</p>)
     }
-    else {
-      //console.log("jokes contains" ,originalJoke)
-    }
+
     const EditJoke = (e:React.FormEvent<HTMLButtonElement>) => {
       e.preventDefault();
+      editHook.mutate(editedJoke)
+      if (editHook.data == "") {
+        toast.error("Error updating the joke");
+      }
+      else {
+        toast.success("Joke updated successfully")
+      }
     }
     
     const originalJoke = getQuery.data || {

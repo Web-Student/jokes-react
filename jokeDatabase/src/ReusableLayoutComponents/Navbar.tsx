@@ -13,7 +13,7 @@ export const Navigation = () => {
                 <NavbarLink text="All jokes" path="/jokes"/>
                 <NavbarLink text="Add a joke" path="/add" />
                 <NavbarLink text="All authors" path="/authors" />
-                <NavbarLink text="sample link someday for my jokes" path="/"/>
+                <NavbarLink text="My jokes" path="/myjokes"/>
                 <div className="p-2 m-2">
                     <LoginLogoutButton/>
                 </div>
