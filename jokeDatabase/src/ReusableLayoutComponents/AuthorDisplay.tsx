@@ -15,7 +15,7 @@ export const AuthorDisplay: React.FC<Props> = ({person}) => {
                 {/* <button onClick = {() => { handleDelete(deleteMutation, joke.id)}}>
                     <TrashCanIcon />
                 </button> */}
-                <Link to = {`/jokesbyauthor/${person.author}`} className="btn btn-outline">
+                <Link to = {`/jokesbyauthor/${person.author}`} className="btn btn-secondary">
                     All jokes
                 </Link>
                 <p className="card-title">{person.author == "" ? "Anonymous": person.author}</p>

@@ -70,8 +70,18 @@ function HomePageContent() {
     
     return (
       <>
-        {GetCurrentUserEmail() ? <p>Hello {GetCurrentUserEmail()}</p>: <p></p>}
-        {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
+        <div className="container justify-content-center">
+          <div className="row">
+              {GetCurrentUserEmail() ? <p>Hello {GetCurrentUserEmail()}</p>: <p></p>}
+          </div>
+
+          <div className="row">
+            <h4>Joke of the day: </h4>
+          </div>
+          <div className="row">
+            {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
+          </div>
+        </div>
       </>
     )
 }

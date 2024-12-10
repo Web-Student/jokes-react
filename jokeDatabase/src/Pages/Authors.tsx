@@ -2,7 +2,6 @@ import React from "react"
 // import { toast, Toaster } from "sonner";
 import useGetAllAuthorCounts from "../CustomHooks/useGetAllAuthorCounts";
 import { AuthorDisplay } from "../ReusableLayoutComponents/AuthorDisplay";
-import { Link } from "react-router";
 
 export const AllAuthors: React.FC = () => {
     const {getQuery } = useGetAllAuthorCounts();
@@ -35,15 +34,14 @@ export const AllAuthors: React.FC = () => {
     
     return (
       <>
-        <Link to="/">Home</Link>
-        {/* <LoginLogoutButton/> */}
-        {authors.map((authorCount, index: number) => (
-          <div>
-            <AuthorDisplay key = {index} person = {authorCount}></AuthorDisplay>
-          </div>
-        ))}
-        
-        {/* <Toaster richColors position="bottom-center" />         */}
+        <div className="container p-2">
+
+          {authors.map((authorCount, index: number) => (
+            <div className="row p-1">
+              <AuthorDisplay key = {index} person = {authorCount}></AuthorDisplay>
+            </div>
+          ))}
+        </div>
       </>
     )
 }
