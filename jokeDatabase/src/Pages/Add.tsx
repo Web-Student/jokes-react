@@ -18,10 +18,10 @@ export const AddJoke:React.FC = () => {
     const postHook = useAddJoke();
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        IncrementLocalJokeCount(); //This is where we increment the local count
+        IncrementLocalJokeCount();
 
         postHook.mutate(newJoke)
-        toast.success ("joke added!")
+        toast.success ("joke added!") //This is my toast
         setNewJoke({
             id: Date.now() % 100000,
             question: "",

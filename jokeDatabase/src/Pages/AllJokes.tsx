@@ -2,29 +2,31 @@ import React from "react"
 import useGetAllJokes from "../CustomHooks/useGetAllJokes";
 import { Joke } from "../DataTransfer/Joke";
 import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
-import { TrashCanIcon } from "../svg/TrashCanIcon";
-import { toast, Toaster } from "sonner";
-import { UseMutationResult } from "@tanstack/react-query";
-import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
+//import { TrashCanIcon } from "../svg/TrashCanIcon";
+//import { toast, Toaster } from "sonner";
+//import { UseMutationResult } from "@tanstack/react-query";
+//import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
 import { Link } from "react-router";
 
 export const AllJokes: React.FC = () => {
-    const {getQuery, invalidate } = useGetAllJokes();
-    const jokes = getQuery.data || []
-    const deleteMutation = useDeleteJoke();
+    // const {getQuery, invalidate } = useGetAllJokes();
+    const {getQuery} = useGetAllJokes();
 
-    const handleDelete = (deleteMutation:UseMutationResult<unknown, Error, number>, id?: number,) => {
-      if (id === undefined) {
-          toast.error("Error deleting joke: joke does not exist")
-      }
+    const jokes = getQuery.data || []
+    //const deleteMutation = useDeleteJoke();
+
+    // const handleDelete = (deleteMutation:UseMutationResult<unknown, Error, number>, id?: number,) => {
+    //   if (id === undefined) {
+    //       toast.error("Error deleting joke: joke does not exist")
+    //   }
       
-      deleteMutation.mutate(id ?? 0, {
-          onSuccess: () => {
-              toast.success("Joke deleted")
-              invalidate();
-          }
-      }) 
-    }
+    //   deleteMutation.mutate(id ?? 0, {
+    //       onSuccess: () => {
+    //           toast.success("Joke deleted")
+    //           invalidate();
+    //       }
+    //   }) 
+    // }
 
     if (getQuery.isLoading) {
       console.log("Data is loading")
@@ -53,14 +55,14 @@ export const AllJokes: React.FC = () => {
         {/* <LoginLogoutButton/> */}
         {jokes.map((jokeObject:Joke, id:number) => (
           <div>
-            <button onClick = {() => { handleDelete(deleteMutation, jokeObject.id)}}>
+            {/* <button onClick = {() => { handleDelete(deleteMutation, jokeObject.id)}}>
                     <TrashCanIcon />
-            </button>
+            </button> */}
             <JokeDisplay key = {id} joke = {jokeObject}></JokeDisplay>
           </div>
         ))}
         
-        <Toaster richColors position="bottom-center" />        
+        {/* <Toaster richColors position="bottom-center" />         */}
       </>
     )
 }

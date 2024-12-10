@@ -10,7 +10,7 @@ import { AllAuthors } from './Pages/Authors'
 import { JokesByAuthor } from './Pages/JokesByAuthor'
 import { Edit } from './Pages/Edit'
 import { Search } from './Pages/Search'
-import { Link, Route, Routes, useParams } from 'react-router';
+import { Route, Routes, useParams } from 'react-router';
 import { MyJokes } from './Pages/MyJokes';
 
 //Needed so we can pass a parameter
@@ -71,11 +71,6 @@ function HomePageContent() {
     return (
       <>
         {GetCurrentUserEmail() ? <p>Hello {GetCurrentUserEmail()}</p>: <p></p>}
-        <div className="container">
-          <div className="row">
-            <Link to="/myjokes">My jokes</Link>
-          </div>
-        </div>
         {joke ? (<JokeDisplay joke = {joke}></JokeDisplay>) : (<JokeDisplay joke = {defaultJoke} />)}
       </>
     )
