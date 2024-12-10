@@ -67,8 +67,8 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
     }
     
     const originalJoke = getQuery.data || {
-        question: "Error retrieving joke",
-        answer: "error retrieving joke",
+        question: "",
+        answer: "",
         author: ""
     }
     return (
