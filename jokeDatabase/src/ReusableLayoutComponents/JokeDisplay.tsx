@@ -53,19 +53,12 @@ export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
     return (
         <div className = "card bg-custom-bg">
             <div className="card-body">
-                {/* <div className="d-flex row align-items-left"> */}
-                    {/* <div className="col"> */}
                         <button onClick = {() => { handleDelete(deleteMutation, joke.id)}}>
                             <TrashCanIcon />
                         </button>
-                    {/* </div> */}
-                    {/* <div className="col"> */}
-
                         <Link className="m-4" to = {`edit/${joke.id}`}>
                             <PencilIcon/>
                         </Link>
-                    {/* </div> */}
-                {/* </div> */}
                 <p className="card-title">{joke.question}</p>
                 <p className="card-text">{joke.answer}</p>
                 <p className="text-end">by {joke.author}</p>
