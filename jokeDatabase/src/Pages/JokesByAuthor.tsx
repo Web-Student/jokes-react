@@ -6,8 +6,8 @@ import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
 // import { UseMutationResult } from "@tanstack/react-query";
 // import { useDeleteJoke } from "../CustomHooks/useDeleteJoke";
 import useGetAllJokesByAuthor from "../CustomHooks/useGetAllJokesByAuthor";
-import LoginLogoutButton from "../Authentication/LoginLogoutButton";
-import { Link } from "react-router";
+// import LoginLogoutButton from "../Authentication/LoginLogoutButton";
+// import { Link } from "react-router";
 
 interface JokesByAuthorProps {
     author: string;
@@ -61,7 +61,7 @@ export const JokesByAuthor: React.FC<JokesByAuthorProps> = ({author}) => {
         {/* <Link to="/">Home</Link> */}
         <h3>Hello, {author}! These are jokes you contributed:</h3>
         {jokes.map((jokeObject:Joke, id:number) => (
-          <div>
+          <div className="row">
             {/* <button onClick = {() => { handleDelete(deleteMutation, jokeObject.id)}}>
                     <TrashCanIcon />
             </button> */}
