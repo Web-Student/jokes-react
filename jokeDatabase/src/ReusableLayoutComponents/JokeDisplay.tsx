@@ -61,7 +61,7 @@ export const JokeDisplay: React.FC<Props> = ({joke = defaultJoke}) => {
                         </Link>
                 <p className="card-title">{joke.question}</p>
                 <p className="card-text">{joke.answer}</p>
-                <p className="text-end">by {joke.author}</p>
+                <p className="text-end">by {joke.author == '' ? "Anonymous" : joke.author}</p>
             </div>
             <Toaster richColors position="top-center" />
         </div>
