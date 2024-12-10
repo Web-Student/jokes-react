@@ -1,11 +1,8 @@
 import { JokeDisplay } from "../ReusableLayoutComponents/JokeDisplay";
-//import { toast, Toaster } from "sonner";
-import LoginLogoutButton from "../Authentication/LoginLogoutButton";
 import useGetJokeById from "../CustomHooks/useGetJokeById";
 import { toast, Toaster } from "sonner";
 import { TextInput } from "../ReusableInputComponents/TextInput";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
 import { useEditJoke } from "../CustomHooks/useEditJoke";
 
 interface JokesByAuthorProps {
@@ -76,8 +73,6 @@ export const Edit: React.FC<JokesByAuthorProps> = ({jokeid}) => {
     }
     return (
       <>
-        <LoginLogoutButton/>
-        <Link to="/">Home</Link>
         <div className="container">
             <div className="row"> 
                 <div className="column">

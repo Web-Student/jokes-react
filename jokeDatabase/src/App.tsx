@@ -12,6 +12,7 @@ import { Edit } from './Pages/Edit'
 import { Search } from './Pages/Search'
 import { Route, Routes, useParams } from 'react-router';
 import { MyJokes } from './Pages/MyJokes';
+import { How } from './Pages/How'
 
 //Needed so we can pass a parameter
 const JokesByAuthorWrapper: React.FC = () => {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/add" element={<AddJoke/>} />
           <Route path="/authors" element={<AllAuthors/>} />
           <Route path={`/edit/:jokeid`} element={<EditJokeWrapper/>} />
+          <Route path="/how" element={<How/>} />
           <Route path="/jokes" element={<AllJokes/>} />
           <Route path={`/jokesbyauthor/:author`} element={<JokesByAuthorWrapper/>} />
           <Route path={`/myjokes`} element={<MyJokes/>} />

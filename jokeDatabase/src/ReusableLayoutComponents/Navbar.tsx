@@ -14,6 +14,7 @@ export const Navigation = () => {
                 <NavbarLink text="Add a joke" path="/add" />
                 <NavbarLink text="All authors" path="/authors" />
                 <NavbarLink text="My jokes" path="/myjokes"/>
+                <NavbarLink text="How" path="/how" />
                 <div className="p-2 m-2">
                     <LoginLogoutButton/>
                 </div>
